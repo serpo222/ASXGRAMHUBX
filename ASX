@@ -44,7 +44,7 @@ DefenseChannel:Button("Teleport to & Start Defense", function()
 end)
 
 DefenseChannel:Button("Teleport back (in case you get flung out)", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(258.0627746582031, 1068.202880859375, 4635.07421875)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
 end)
 
 
@@ -177,6 +177,15 @@ MiscellanousChannel:Button("Position Finder", function()
     coroutine.wrap(EKBNYI_fake_script)()
 end)
 
+MiscellanousChannel:Button("Walkspeed 75", function()
+    getgenv().WalkSpeedValue = 75; --set your desired walkspeed here
+    local Player = game:service'Players'.LocalPlayer;
+    Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+    end)
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+end)
+
 AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
@@ -206,7 +215,12 @@ AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
 end)
 
 
-AutoRotationChannel:Toggle("Auto-Farm",false, function(bool)
-
+local toggle = false
+AutoRotationChannel:Toggle("Auto Farm Defense",false, function(bool)
+    toggle = !toggle
+    if toggle then
+        while true do
+            wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
 end)
 
