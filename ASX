@@ -49,7 +49,7 @@ DefenseChannel:Button("Teleport back (in case you get flung out)", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
 end)
 
-DefenseChannel:Label("Autofarming Section, once you turn on it infinitely loops, will add toggle later on")
+DefenseChannel:Label("Autofarming Section, once you turn on it infinitely loops.")
 
 DefenseChannel:Button("Loop Kill Defense Mobs", function()
     while true do
