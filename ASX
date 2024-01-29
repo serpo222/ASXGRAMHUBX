@@ -5,7 +5,6 @@ end)
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("ASX GRAM HUB")
-
 local serv = win:Server("Anime Souls X", "")
 
 
@@ -99,7 +98,6 @@ end)
 
 DefenseChannel:Button("Loop Start Defense", function()
     while true do
-        wait(40)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
 
     if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
@@ -121,6 +119,7 @@ DefenseChannel:Button("Loop Start Defense", function()
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
     end
     end
+    wait(40)
 end)
 
 
