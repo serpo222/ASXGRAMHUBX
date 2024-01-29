@@ -205,8 +205,3 @@ AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
     end
 end)
 
-
-AutoRotationChannel:Toggle("Auto-Farm",false, function(bool)
-
-end)
-
