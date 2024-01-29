@@ -1,6 +1,6 @@
 local function checkTime()
         local currentTime = os.date("*t", os.time())
-        if currentTime.min == 08 then
+        if currentTime.min == 09 then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625) -- room 0
             wait(2)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625) -- room 0
