@@ -15,8 +15,8 @@ local MiscellanousChannel = serv:Channel("Miscellanous")
 
 
 
-DefenseChannel:Button("Teleport back (in case you get flung out)", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(258.0627746582031, 1068.202880859375, 4635.07421875)
+DefenseChannel:Button("Remove Crystal", function()
+    game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
 end)
 
 DefenseChannel:Button("Teleport to & Start Defense", function()
@@ -41,6 +41,13 @@ DefenseChannel:Button("Teleport to & Start Defense", function()
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
     end
 end)
+
+DefenseChannel:Button("Teleport back (in case you get flung out)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(258.0627746582031, 1068.202880859375, 4635.07421875)
+end)
+
+
+
 
 MiscellanousChannel:Button("Position Finder", function()
     local ScreenGui = Instance.new("ScreenGui")
@@ -169,10 +176,24 @@ MiscellanousChannel:Button("Position Finder", function()
     coroutine.wrap(EKBNYI_fake_script)()
 end)
 
-AutoRotationChannel:Button("Auto Easy Dungeon :00 and :30", function()
+AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
-        if currentTime.min == 16 then
+        if currentTime.min == 00 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Easy%20Teleports", true))()
+        end
+    end
+    
+    while true do
+        wait(60) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 30 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Easy%20Teleports", true))()
         end
     end
