@@ -4,7 +4,7 @@ repeat wait() until game:IsLoaded()  -- anti afk
 end)
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
-local win = DiscordLib:Window("ASX GRAM HUB")
+local win = DiscordLib:Window("ASX GRAM HUB ARJUNS CAR ON A ROUNDABOUT - MADE BY TOP G")
 local serv = win:Server("Anime Souls X", "")
 
 
@@ -87,12 +87,12 @@ DefenseChannel:Button("Loop Kill Defense Mobs", function()
     end
 end)
 
-DefenseChannel:Button("Loop teleport to the middle (6.5 seconds)", function()
+DefenseChannel:Button("Loop teleport to the middle (5 seconds)", function()
     game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
     wait(1)
     while true do
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
-        wait(6.5)
+        wait(5)
     end
 end)
 
