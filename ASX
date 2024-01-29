@@ -205,8 +205,3 @@ AutoFarmChannel:Button("Auto Easy Dungeon :30", function()
     end
 end)
 
-AutoFarmChannel:Toggle("Auto-Farm",false, function(bool)
-
-end)
-
-
