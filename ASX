@@ -98,6 +98,7 @@ end)
 
 DefenseChannel:Button("Loop Start Defense", function()
     while true do
+        wait(60)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
 
     if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
@@ -119,7 +120,6 @@ DefenseChannel:Button("Loop Start Defense", function()
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
     end
     end
-    wait(40)
 end)
 
 
