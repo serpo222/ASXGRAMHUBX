@@ -215,4 +215,12 @@ AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
 end)
 
 
+local toggle = false
+AutoRotationChannel:Toggle("Auto Farm Defense",false, function(bool)
+    toggle = !toggle
+    if toggle then
+        while true do
+            wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
+end)
 
