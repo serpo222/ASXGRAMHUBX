@@ -8,6 +8,8 @@ local win = DiscordLib:Window("ASX GRAM HUB")
 
 local serv = win:Server("Anime Souls X", "")
 
+local tgls = serv:Channel("Toggles")
+
 local DefenseChannel = serv:Channel("Defense Mode")
 local DungeonChannel = serv:Channel("Dungeon Mode")
 local AutoRotationChannel = serv:Channel("Auto Rotations")
@@ -215,12 +217,6 @@ AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
 end)
 
 
-local toggle = false
-AutoRotationChannel:Toggle("Auto Farm Defense",false, function(bool)
-    toggle = !toggle
-    if toggle then
-        while true do
-            wait(0.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
-end)
-
+tgls:Toggle("Auto-Farm",false, function(bool)
+    print(bool)
+    end)
