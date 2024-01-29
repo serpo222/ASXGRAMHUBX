@@ -1,105 +1,292 @@
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(198.90817260742188, 6292.21337890625, -961.3734130859375)
-            wait(65)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.19377458095550537, 10491.564453125, -5697.82421875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7357298135757446, 10491.564453125, -5584.09130859375)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.8778515458106995, 10491.5625, -5470.81787109375)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.3030710220336914, 10496.8125, -5365.9169921875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.5149173140525818, 10496.8125, -5240.591796875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7163733243942261, 10496.8125, -5131.2431640625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.7493233680725098, 10496.8125, -5023.0712890625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.617570698261261, 10496.8134765625, -4901.41650390625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.7106701731681824, 10496.8134765625, -4785.3837890625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.8098064064979553, 10496.8134765625, -4670.44580078125)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9081650376319885, 10496.8134765625, -4556.53564453125)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.010288953781128, 10496.8125, -4445.111328125)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.1109294891357422, 10496.8125, -4325.84814453125)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.2040252685546875, 10496.8125, -4212.17138671875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.3313941955566406, 10496.8125, -4093.437255859375)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.6123086214065552, 10496.8125, -3983.278076171875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.3061450719833374, 10496.8125, -3864.758056640625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.107485771179199, 10496.8125, -3750.89013671875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.1904505491256714, 10496.8125, -3632.44140625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.5396296977996826, 10496.8125, -3520.99560546875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.43759387731552124, 10496.8125, -3403.90625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.33580440282821655, 10496.8125, -3287.0947265625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.11208197474479675, 10496.8115234375, -3177.527587890625)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.0022269487380981445, 10496.8115234375, -3061.341796875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.683600664138794, 10496.8115234375, -2946.969482421875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.22457650303840637, 10496.8115234375, -2830.740966796875)
-            wait(2.75)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.7805488109588623, 10496.8115234375, -2720.275146484375)
-            wait(2.75)
+repeat wait() until game:IsLoaded()  -- anti afk
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
 
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local win = DiscordLib:Window("ASX GRAM HUB")
+
+local serv = win:Server("Anime Souls X", "")
+
+local DefenseChannel = serv:Channel("Defense Mode")
+local DungeonChannel = serv:Channel("Dungeon Mode")
+local AutoRotationChannel = serv:Channel("Auto Rotations")
+local MiscellanousChannel = serv:Channel("Miscellanous")
+
+
+
+DefenseChannel:Button("Teleport back (in case you get flung out)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(258.0627746582031, 1068.202880859375, 4635.07421875)
+end)
+
+DefenseChannel:Button("Teleport to & Start Defense", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
+
+    if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
+
+    firesignal(game:GetService("Players").LocalPlayer.PlayerGui._CENTER.Defense.Content.Public.MouseButton1Click)
+
+    task.wait(0.96)
+
+    local args = {
+        [1] = {
+            [1] = {
+               [1] = "\3",
+               [2] = "Defense",
+               [3] = "Join"
+           }
+       }
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
+end)
+
+MiscellanousChannel:Button("Position Finder", function()
+    local ScreenGui = Instance.new("ScreenGui")
+    local Frame = Instance.new("Frame")
+    local title = Instance.new("TextLabel")
+    local copy = Instance.new("TextButton")
+    local pos = Instance.new("TextBox")
+    local find = Instance.new("TextButton")
+ 
+    --Properties:
+ 
+    ScreenGui.Parent = game.CoreGui
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ 
+    Frame.Parent = ScreenGui
+    Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+    Frame.BorderSizePixel = 0
+    Frame.Position = UDim2.new(0.639646292, 0, 0.399008662, 0)
+    Frame.Size = UDim2.new(0, 387, 0, 206)
+    Frame.Active = true
+ 
+    title.Name = "title"
+    title.Parent = Frame
+    title.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    title.BorderSizePixel = 0
+    title.Size = UDim2.new(0, 387, 0, 50)
+    title.Font = Enum.Font.GothamBold
+    title.Text = "Position Finder"
+    title.TextColor3 = Color3.fromRGB(255, 255, 255)
+    title.TextSize = 30.000
+    title.TextWrapped = true
+ 
+    copy.Name = "copy"
+    copy.Parent = Frame
+    copy.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    copy.BorderSizePixel = 0
+    copy.Position = UDim2.new(0.527131796, 0, 0.635922313, 0)
+    copy.Size = UDim2.new(0, 148, 0, 50)
+    copy.Font = Enum.Font.GothamSemibold
+    copy.Text = "Copy"
+    copy.TextColor3 = Color3.fromRGB(255, 255, 255)
+    copy.TextSize = 20.000
+ 
+    pos.Name = "pos"
+    pos.Parent = Frame
+    pos.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    pos.BorderSizePixel = 0
+    pos.Position = UDim2.new(0.0904392749, 0, 0.305825233, 0)
+    pos.Size = UDim2.new(0, 317, 0, 50)
+    pos.Font = Enum.Font.GothamSemibold
+    pos.Text = ""
+    pos.TextColor3 = Color3.fromRGB(255, 255, 255)
+    pos.TextSize = 14.000
+    pos.TextWrapped = true
+ 
+    find.Name = "find"
+    find.Parent = Frame
+    find.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    find.BorderSizePixel = 0
+    find.Position = UDim2.new(0.0904392898, 0, 0.635922313, 0)
+    find.Size = UDim2.new(0, 148, 0, 50)
+    find.Font = Enum.Font.GothamSemibold
+    find.Text = "Find"
+    find.TextColor3 = Color3.fromRGB(255, 255, 255)
+    find.TextSize = 20.000
+ 
+    -- Scripts:
+ 
+    local function UMTQ_fake_script() -- copy.LocalScript 
+	local script = Instance.new('LocalScript', copy)
+ 
+	script.Parent.MouseButton1Click:Connect(function()
+		setclipboard(script.Parent.Parent.pos.Text)
+	end)
+    end
+    coroutine.wrap(UMTQ_fake_script)()
+    local function KJAYG_fake_script() -- Frame.Dragify 
+	local script = Instance.new('LocalScript', Frame)
+ 
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+	    dragToggle = nil
+	    local dragSpeed = 0
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
+	        local Delta = input.Position - dragStart
+	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
+	    end
+	    Frame.InputBegan:Connect(function(input)
+	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+	            dragToggle = true
+	            dragStart = input.Position
+	            startPos = Frame.Position
+	            input.Changed:Connect(function()
+	                if input.UserInputState == Enum.UserInputState.End then
+	                    dragToggle = false
+	                end
+	            end)
+	        end
+	    end)
+	    Frame.InputChanged:Connect(function(input)
+	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	            dragInput = input
+	        end
+	    end)
+	    game:GetService("UserInputService").InputChanged:Connect(function(input)
+	        if input == dragInput and dragToggle then
+	            updateInput(input)
+	        end
+	    end)
+	end
+ 
+	dragify(script.Parent)
+    end
+    coroutine.wrap(KJAYG_fake_script)()
+    local function EKBNYI_fake_script() -- find.LocalScript 
+	local script = Instance.new('LocalScript', find)
+ 
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.pos.Text = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+	end)
+    end
+    coroutine.wrap(EKBNYI_fake_script)()
+end)
+
+AutoRotationChannel:Button("Auto Easy Dungeon :00 and :30", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 07 then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.19377458095550537, 10491.564453125, -5697.82421875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7357298135757446, 10491.564453125, -5584.09130859375)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.8778515458106995, 10491.5625, -5470.81787109375)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.3030710220336914, 10496.8125, -5365.9169921875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.5149173140525818, 10496.8125, -5240.591796875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7163733243942261, 10496.8125, -5131.2431640625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.7493233680725098, 10496.8125, -5023.0712890625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.617570698261261, 10496.8134765625, -4901.41650390625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.7106701731681824, 10496.8134765625, -4785.3837890625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.8098064064979553, 10496.8134765625, -4670.44580078125)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9081650376319885, 10496.8134765625, -4556.53564453125)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.010288953781128, 10496.8125, -4445.111328125)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.1109294891357422, 10496.8125, -4325.84814453125)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.2040252685546875, 10496.8125, -4212.17138671875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.3313941955566406, 10496.8125, -4093.437255859375)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.6123086214065552, 10496.8125, -3983.278076171875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.3061450719833374, 10496.8125, -3864.758056640625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.107485771179199, 10496.8125, -3750.89013671875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.1904505491256714, 10496.8125, -3632.44140625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.5396296977996826, 10496.8125, -3520.99560546875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.43759387731552124, 10496.8125, -3403.90625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.33580440282821655, 10496.8125, -3287.0947265625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.11208197474479675, 10496.8115234375, -3177.527587890625)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.0022269487380981445, 10496.8115234375, -3061.341796875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.683600664138794, 10496.8115234375, -2946.969482421875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.22457650303840637, 10496.8115234375, -2830.740966796875)
+            wait(3.5)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.7805488109588623, 10496.8115234375, -2720.275146484375)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.976712703704834, 10496.8115234375, -2601.974365234375)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.5980997681617737, 10496.8115234375, -2484.170166015625)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.8233307600021362, 10496.8115234375, -2368.200927734375)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.41373497247695923, 10496.8115234375, -2248.8662109375)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.3525114059448242, 10496.8115234375, -2141.46142578125)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.28384751081466675, 10496.8115234375, -2027.2623291015625)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.748362123966217, 10496.8115234375, -1906.8341064453125)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.8367693424224854, 10496.8115234375, -1798.269287109375)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.7831525802612305, 10496.8115234375, -1680.4700927734375)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.7206624150276184, 10496.8115234375, -1567.154296875)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.2034870982170105, 10496.8125, -1450.4947509765625)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.32825660705566406, 10496.8125, -1329.9798583984375)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7930028438568115, 10496.8125, -1220.79248046875)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.1738945245742798, 10496.8125, -1102.4412841796875)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.1929551661014557, 10496.8125, -988.5813598632812)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.34465423226356506, 10496.8125, -877.6131591796875)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.1538943499326706, 10496.8125, -763.2982788085938)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.499950647354126, 10496.8125, -645.037109375)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.525863528251648, 10496.8125, -528.2555541992188)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.3154792785644531, 10496.8125, -414.92266845703125)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7669159770011902, 10496.8125, -298.94940185546875)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7642595767974854, 10496.8125, -188.4968719482422)
-            wait(2.75)
+            wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7305423021316528, 10496.8173828125, -68.38027954101562)
-            wait(2.75)
+            wait(3.5)
+
+            print("It's a new hour!")
+        end
+    end
+    
+    -- Check time periodically, maybe every minute
+    while true do
+        wait(60) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+
+
+
