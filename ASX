@@ -10,7 +10,7 @@ local serv = win:Server("Anime Souls X", "")
 
 local DefenseChannel = serv:Channel("Defense Mode")
 local DungeonChannel = serv:Channel("Dungeon Mode")
-local AutoFarmChannel = serv:Channel("Auto Rotations")
+local AutoRotationChannel = serv:Channel("Auto Rotations")
 local MiscellanousChannel = serv:Channel("Miscellanous")
 
 
@@ -177,7 +177,7 @@ MiscellanousChannel:Button("Position Finder", function()
     coroutine.wrap(EKBNYI_fake_script)()
 end)
 
-AutoFarmChannel:Button("Auto Easy Dungeon :00", function()
+AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
         if currentTime.min == 00 then
@@ -191,7 +191,7 @@ AutoFarmChannel:Button("Auto Easy Dungeon :00", function()
     end
 end)
 
-AutoFarmChannel:Button("Auto Easy Dungeon :30", function()
+AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
         if currentTime.min == 30 then
@@ -203,5 +203,10 @@ AutoFarmChannel:Button("Auto Easy Dungeon :30", function()
         wait(60) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
+end)
+
+
+AutoRotationChannel:Toggle("Auto-Farm",false, function(bool)
+
 end)
 
