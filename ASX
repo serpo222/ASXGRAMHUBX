@@ -1,4 +1,15 @@
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.19377458095550537, 10491.564453125, -5697.82421875)
+local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 08 then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625) -- room 0
+            wait(2)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625) -- room 0
+            wait(2)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625) -- room 0
+            wait(2)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625) -- room 0
+            wait(60)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.19377458095550537, 10491.564453125, -5697.82421875)
             wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7357298135757446, 10491.564453125, -5584.09130859375)
             wait(3.5)
@@ -98,3 +109,13 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.193774
             wait(3.5)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.7305423021316528, 10496.8173828125, -68.38027954101562)
             wait(3.5)
+
+            print("It's a new hour!")
+        end
+    end
+    
+    -- Check time periodically, maybe every minute
+    while true do
+        wait(60) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
