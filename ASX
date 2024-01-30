@@ -183,6 +183,9 @@ end)
 
 
 
+
+
+
 MiscellanousChannel:Button("Position Finder", function()
     local ScreenGui = Instance.new("ScreenGui")
     local Frame = Instance.new("Frame")
@@ -483,6 +486,20 @@ AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
         local currentTime = os.date("*t", os.time())
         if currentTime.min == 30 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Easy%20Teleports", true))()
+        end
+    end
+    
+    while true do
+        wait(60) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+AutoRotationChannel:Button("Alien Invasion :39", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 30 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Alien%20Invasion", true))()
         end
     end
     
