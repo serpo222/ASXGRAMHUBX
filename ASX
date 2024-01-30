@@ -333,15 +333,19 @@ SecretBossesChannel:Button("Loop Through All (should be in their map, might bug)
         end
     end
 end)
-
-
-
-
-
-
-
-
-
-
-
-
+SecretBossesChannel:Button("Cursed Zone", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(567.4405517578125, 22.376876831054688, -166.1839141845703)
+end)
+SecretBossesChannel:Button("Bizarre Area", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(302.6838684082031, 22.174760818481445, -332.15423583984375)
+end)
+SecretBossesChannel:Button("Ninja Village, function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-82.08238220214844, 17.562477111816406, -309.6497802734375)
+end)
+SecretBossesChannel:Button("Hunter Zone", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-315.27850341796875, 21.585254669189453, -147.81068420410156)
+end)
+SecretBossesChannel:Button("Spirit Society", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-744.5907592773438, 50.593597412109375, 35.02621841430664)
+end)
+SecretB
