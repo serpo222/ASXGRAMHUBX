@@ -366,3 +366,30 @@ end)
 
 
 
+Miscellanous:Toggle(
+    "Instant Avatar Spin",
+    false,
+    function(bool)
+        local args = {
+            [1] = {
+                [1] = {
+                    [1] = "\3",
+                    [2] = "Avatars",
+                    [3] = "Spin"
+                }
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
+)
+
+
+
+
+
+
+
+
+
+
