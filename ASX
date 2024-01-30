@@ -12,6 +12,7 @@ local serv = win:Server("Anime Souls X", "")
 local DefenseChannel = serv:Channel("Defense Mode")
 local DungeonChannel = serv:Channel("Dungeon Mode")
 local AutoRotationChannel = serv:Channel("Auto Rotations")
+local SecretBossesChannel = serv:Channel("Secret Bosses")
 local MiscellanousChannel = serv:Channel("Miscellanous")
 
 
@@ -262,6 +263,11 @@ MiscellanousChannel:Button("Walkspeed 75", function()
     Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
 end)
 
+
+
+
+
+
 AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
@@ -289,6 +295,82 @@ AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
         checkTime() -- Check the time
     end
 end)
+
+
+
+
+SecretBossesChannel:Button("Loop Through All (should be in their map, might bug)", function()
+    task.wait(0.25)
+    local Plr = game.Players.LocalPlayer
+    
+    local Enemn = nil
+    
+    local ClostDist = 10000000000000000
+    
+    for _, v in pairs(workspace._ENEMIES.SecretBosses:GetChildren()) do
+        
+        if v:FindFirstChild("HumanoidRootPart") then
+            
+            local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
+            
+            if DistCryst < ClostDist then
+                
+                ClostDist = DistCryst
+                Enemn = v
+                
+                Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
+                
+                local VirtualUser = game:GetService("VirtualUser")
+                local function DoClicks(x, y)
+                    VirtualUser:CaptureController()
+                    VirtualUser:Button1Down(Vector2.new(x,y))
+                    task.wait(0.0001)
+                    VirtualUser:Button1Up(Vector2.new(x, y))
+                end
+                DoClicks(250, 250)
+                break;
+            end
+        end
+    end
+end)
+SecretBossesChannel:Button("Cursed Zone", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(567.4405517578125, 22.376876831054688, -166.1839141845703)
+end)
+SecretBossesChannel:Button("Bizarre Area", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(302.6838684082031, 22.174760818481445, -332.15423583984375)
+end)
+SecretBossesChannel:Button("Ninja Village, function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-82.08238220214844, 17.562477111816406, -309.6497802734375)
+end)
+SecretBossesChannel:Button("Hunter Zone", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-315.27850341796875, 21.585254669189453, -147.81068420410156)
+end)
+SecretBossesChannel:Button("Spirit Society", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-744.5907592773438, 50.593597412109375, 35.02621841430664)
+end)
+SecretBossesChannel:Button("Dragon City", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1107.502685546875, 21.05242156982422, -182.0968780517578)
+end)
+SecretBossesChannel:Button("Ghoul Town", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1286.8802490234375, 21.65215492248535, 59.17391586303711)
+end)
+SecretBossesChannel:Button("Marine Station", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1852.821044921875, 21.56102752685547, 117.8427734375)
+end)
+SecretBossesChannel:Button("Leveling City", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1945.238037109375, 21.108051300048828, 38.31850814819336)
+end)
+SecretBossesChannel:Button("Titan District", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2657.18017578125, 16.234107971191406, 33.9995002746582)
+end)
+
+
+
+
+
+
+
+
 
 
 
