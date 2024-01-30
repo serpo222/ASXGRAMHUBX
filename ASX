@@ -12,8 +12,9 @@ local serv = win:Server("Anime Souls X", "")
 local DefenseChannel = serv:Channel("Defense Mode")
 local DungeonChannel = serv:Channel("Dungeon Mode")
 local AutoRotationChannel = serv:Channel("Auto Rotations")
-local SecretBossesChannel = serv:Channel("Secret Bosses")
+local AlienInvasionChannel = serv:Channel("Alien Invasion")
 local MiscellanousChannel = serv:Channel("Miscellanous")
+local SecretBossesChannel = serv:Channel("Secret Bosses")
 
 
 
@@ -124,6 +125,61 @@ DefenseChannel:Button("Loop Start Defense", function()
 end)
 
 
+
+AlienInvasionChannel:Button("Enter Alien Invasion", function()
+    local args = {
+        [1] = {
+            [1] = {
+                [1] = "\3",
+                [2] = "AlienInvasion",
+                [3] = "Join"
+            }
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end)
+
+AlienInvasionChannel:Button("Teleport To The Center (Boss)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13565.68359375, 5980.34033203125, 198.92274475097656)
+end)
+
+AlienInvasionChannel:Button("Loop Kill Alien Invasion Once You're close", function()
+    while true do
+        task.wait(0.25)
+        local Plr = game.Players.LocalPlayer
+        
+        local Enemn = nil
+        
+        local ClostDist = 280
+        
+        for _, v in pairs(workspace._ENEMIES.AlienInvasion:GetChildren()) do
+            
+            if v:FindFirstChild("HumanoidRootPart") then
+                
+                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
+                
+                if DistCryst < ClostDist then
+                    
+                    ClostDist = DistCryst
+                    Enemn = v
+                    
+                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
+                    
+                    local VirtualUser = game:GetService("VirtualUser")
+                    local function DoClicks(x, y)
+                        VirtualUser:CaptureController()
+                        VirtualUser:Button1Down(Vector2.new(x,y))
+                        task.wait(0.0001)
+                        VirtualUser:Button1Up(Vector2.new(x, y))
+                    end
+                    DoClicks(250, 250)
+                    break;
+                end
+            end
+        end
+    end
+end)
 
 
 
