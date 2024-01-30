@@ -366,7 +366,7 @@ end)
 
 
 
-Miscellanous:Toggle(
+MiscellanousChannel:Toggle(
     "Instant Avatar Spin",
     false,
     function(bool)
