@@ -370,7 +370,9 @@ MiscellanousChannel:Toggle(
     "Instant Avatar Spin",
     false,
     function(bool)
-        local args = {
+        while true do
+            wait(0.1)
+            local args = {
             [1] = {
                 [1] = {
                     [1] = "\3",
@@ -381,6 +383,11 @@ MiscellanousChannel:Toggle(
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+        
+        
+        
+        
     end
 )
 
