@@ -476,7 +476,7 @@ AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     end
     
     while true do
-        wait(60) -- Wait for 60 seconds
+        wait(1) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
@@ -500,6 +500,34 @@ AutoRotationChannel:Button("Alien Invasion :39", function()
         local currentTime = os.date("*t", os.time())
         if currentTime.min == 30 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Alien%20Invasion", true))()
+        end
+    end
+    
+    while true do
+        wait(60) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+AutoRotationChannel:Button("Alien Medium Dungeon :15", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 15 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Medium%20Teleports", true))()
+        end
+    end
+    
+    while true do
+        wait(60) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+AutoRotationChannel:Button("Alien Medium Dungeon :45", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 45 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Medium%20Teleports", true))()
         end
     end
     
