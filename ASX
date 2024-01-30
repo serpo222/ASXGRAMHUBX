@@ -348,4 +348,29 @@ end)
 SecretBossesChannel:Button("Spirit Society", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-744.5907592773438, 50.593597412109375, 35.02621841430664)
 end)
-SecretB
+SecretBossesChannel:Button("Dragon City", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1107.502685546875, 21.05242156982422, -182.0968780517578)
+end)
+SecretBossesChannel:Button("Ghoul Town", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1286.8802490234375, 21.65215492248535, 59.17391586303711)
+end)
+SecretBossesChannel:Button("Marine Station", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1852.821044921875, 21.56102752685547, 117.8427734375)
+end)
+SecretBossesChannel:Button("Leveling City", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1945.238037109375, 21.108051300048828, 38.31850814819336)
+end)
+SecretBossesChannel:Button("Titan District", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2657.18017578125, 16.234107971191406, 33.9995002746582)
+end)
+
+
+
+
+
+
+
+
+
+
+
