@@ -266,7 +266,7 @@ end)
 
 
 
-DefenseChannel:Label("Turn on when a new minute passes")
+AutoRotationChannel:Label("Turn on when a new minute passes")
 
 AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     local function checkTime()
