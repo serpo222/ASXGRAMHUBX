@@ -539,7 +539,7 @@ end)
 
 
 
-Miscellanous:Toggle(
+MiscellanousChannel:Toggle(
     "Test",
     false,
     function(bool)
