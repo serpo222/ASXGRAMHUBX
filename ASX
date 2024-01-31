@@ -20,9 +20,6 @@ getgenv().settings = {
     LoopTeleport = false,
 }
 
-MiscellanousChannel:Button("Delete", function()
-    print("aaaaaaaaa")
-end)
 
 
 
@@ -422,8 +419,8 @@ end)
 MiscellanousChannel:Toggle(
     "Teleport Around",
     false,
-    function(bool)
-        settings.LoopTeleport = true
+    function(a)
+        settings.LoopTeleport = a
     end
 )
 
