@@ -6,13 +6,7 @@ end)
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("ASX GRAM HUB ARJUNS CAR ON A ROUNDABOUT - MADE BY TOP G")
 local serv = win:Server("Anime Souls X", "")
-local secretServer = win:Server("Get any secret", "")
 
-local SecretChannel = secretServer:Channel("Get any Secret Roll")
-SecretChannel:Label("The owner can sell you this designated for you.")
-SecretChannel:Label("Prices vary, this script will be kept as private as possible")
-SecretChannel:Label("So  it'll cost more, since it's only aimed at")
-SecretChannel:Label("People who play the game and want to stay on LB")
 
 local DefenseChannel = serv:Channel("Defense Mode")
 local DungeonChannel = serv:Channel("Dungeon Mode")
