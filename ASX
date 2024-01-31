@@ -474,6 +474,7 @@ MiscellanousChannel:Button("Instant Dungeon Key Spin", function()
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
 end)
 
 
