@@ -422,6 +422,10 @@ MiscellanousChannel:Toggle(
     end
 )
 
+MiscellanousChannel:Button("Delete", function()
+    print("aaaaaaaaa")
+end)
+
 
 
 
