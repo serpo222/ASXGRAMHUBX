@@ -414,7 +414,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
     end
 end)
 
-MiscellanousChannel:tgls:Toggle(
+MiscellanousChannel:Toggle(
     "Teleport Around",
     false,
     function(bool)
