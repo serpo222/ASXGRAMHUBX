@@ -540,7 +540,7 @@ end)
 
 
 Miscellanous:Toggle(
-    "Auto-Farm",
+    "Test",
     false,
     function(bool)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/test", true))()
