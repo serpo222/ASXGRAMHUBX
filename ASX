@@ -487,6 +487,20 @@ MiscellanousChannel:Button("Spin Dungeon Key (Multi Task)", function()
     end
 end)
 
+MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 30 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/ShipRewards", true))()
+        end
+    end
+    
+    while true do
+        wait(60) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
 
 
 
@@ -534,7 +548,7 @@ AutoRotationChannel:Button("Alien Invasion :39", function()
     end
     
     while true do
-        wait(60) -- Wait for 60 seconds
+        wait(15) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
@@ -548,7 +562,7 @@ AutoRotationChannel:Button("Auto Medium Dungeon :15", function()
     end
     
     while true do
-        wait(60) -- Wait for 60 seconds
+        wait(15) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
