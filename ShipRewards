@@ -1,0 +1,36 @@
+wait(1)
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "Crew",
+            [3] = "Callback"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+wait(5)
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "Crew",
+            [3] = "ClaimRewards"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+wait(15)
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "Crew",
+            [3] = "Send"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
