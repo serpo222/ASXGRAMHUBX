@@ -20,6 +20,11 @@ getgenv().settings = {
     LoopTeleport = false,
 }
 
+MiscellanousChannel:Button("Delete", function()
+    print("aaaaaaaaa")
+end)
+
+
 
 DefenseChannel:Button("Remove Crystal", function()
     game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
@@ -422,9 +427,6 @@ MiscellanousChannel:Toggle(
     end
 )
 
-MiscellanousChannel:Button("Delete", function()
-    print("aaaaaaaaa")
-end)
 
 
 
