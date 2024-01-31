@@ -312,7 +312,7 @@ MiscellanousChannel:Button("Position Finder", function()
     coroutine.wrap(EKBNYI_fake_script)()
 end)
 
-MiscellanousChannel:Button("Walkspeed 100", function()
+MiscellanousChannel:Button("Walkspeed 100", function()  
     getgenv().WalkSpeedValue = 100; --set your desired walkspeed here
     local Player = game:service'Players'.LocalPlayer;
     Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
@@ -473,7 +473,7 @@ MiscellanousChannel:Button("Spin Dungeon Key (Multi Task)", function()
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-        wait(0.5)
+        wait(1)
     end
 end)
 
