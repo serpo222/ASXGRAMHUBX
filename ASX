@@ -5,8 +5,8 @@ end)
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("ASX GRAM HUB ARJUNS CAR ON A ROUNDABOUT - MADE BY TOP G")
-local serv = win:Server("Anime Souls X", "")
 
+local serv = win:Server("Anime Souls X", "")
 
 local DefenseChannel = serv:Channel("Defense Mode")
 local DungeonChannel = serv:Channel("Dungeon Mode")
@@ -14,6 +14,18 @@ local AutoRotationChannel = serv:Channel("Auto Rotations")
 local AlienInvasionChannel = serv:Channel("Alien Invasion")
 local MiscellanousChannel = serv:Channel("Miscellanous")
 local SecretBossesChannel = serv:Channel("Secret Bosses")
+
+local serv2 = win:Server("PRIVATE OFFER", "")
+
+local SecretChannel = serv2:Channel("Roll Any Secret")
+
+SecretChannel:Label("This script can get you any secret in the game")
+SecretChannel:Label("If you want to buy this, message owner")
+SecretChannel:Label("Easy leaderboard management")
+SecretChannel:Label("Trying to keep this as private as possible")
+SecretChannel:Label("So the price won't be cheap")
+
+
 
 
 
@@ -179,8 +191,6 @@ AlienInvasionChannel:Button("Loop Kill Alien Invasion Once You're close", functi
         end
     end
 end)
-
-
 
 
 
