@@ -16,9 +16,7 @@ local AlienInvasionChannel = serv:Channel("Alien Invasion")
 local MiscellanousChannel = serv:Channel("Miscellanous")
 local SecretBossesChannel = serv:Channel("Secret Bosses")
 
-getgenv().settings = {
-    LoopTeleport = false,
-}
+
 
 
 DefenseChannel:Button("Remove Crystal", function()
@@ -444,18 +442,24 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+        local args = {
+            [1] = {
+                [1] = {
+                    [1] = "\3",
+                    [2] = "DailyRewards",
+                    [3] = "Reset"
+                }
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         wait(600)
     end
 end)
-
-MiscellanousChannel:tgls:Toggle(
-    "Teleport Around",
-    false,
-    function(bool)
-        settings.LoopTeleport = true
-    end
-)
 
 
 
@@ -612,9 +616,3 @@ end)
 
 
 
-game:GetService("RunService").Heartbeat:connect(function()
-	if settings.LoopTeleport then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/test", true))()
-		task.wait(0.155)
-	end
-end)
