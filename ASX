@@ -543,10 +543,15 @@ MiscellanousChannel:Toggle(
     "Test",
     false,
     function(bool)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(198.90817260742188, 6292.21337890625, -961.3734130859375)
-		wait(1)
+        if bool then
+            -- The toggle is turned on
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(198.90817260742188, 6292.21337890625, -961.3734130859375)
+            wait(1)
+        else
+            -- The toggle is turned off
+            -- You can optionally add code here if you want to perform any action when the toggle is turned off
+        end
     end
-)
 
 
 SecretBossesChannel:Button("Loop Through All (should be in their map, might bug)", function()
