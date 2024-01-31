@@ -583,7 +583,7 @@ end)
 game:GetService("RunService").Heartbeat:connect(function()
 	if settings.LoopTeleport then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/test", true))()
-		task.wait(0.155)
+		task.wait(5)
     else
         return
 	end
