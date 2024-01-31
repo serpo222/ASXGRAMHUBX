@@ -466,119 +466,14 @@ MiscellanousChannel:Button("Spin Dungeon Key (Multi Task)", function()
             [1] = {
                 [1] = {
                     [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "1"
+                    [2] = "OPCrate",
+                    [3] = "Spin"
                 }
             }
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "2"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "3"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "4"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "5"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "6"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "7"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "8"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Reset"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        wait(600)
+        wait(1)
     end
 end)
 
