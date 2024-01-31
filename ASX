@@ -585,7 +585,6 @@ game:GetService("RunService").Heartbeat:connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/test", true))()
 		task.wait(0.155)
     else
-        break
-
+        return
 	end
 end)
