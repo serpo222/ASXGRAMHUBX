@@ -552,6 +552,7 @@ MiscellanousChannel:Toggle(
             -- You can optionally add code here if you want to perform any action when the toggle is turned off
         end
     end
+)
 
 
 SecretBossesChannel:Button("Loop Through All (should be in their map, might bug)", function()
