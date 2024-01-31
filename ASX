@@ -350,7 +350,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -363,7 +363,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -376,7 +376,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -389,7 +389,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -402,7 +402,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -415,7 +415,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -428,7 +428,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -441,7 +441,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         local args = {
@@ -453,7 +453,7 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
                 }
             }
         }
-        
+        wait(3)
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
         wait(600)
@@ -473,7 +473,7 @@ MiscellanousChannel:Button("Spin Dungeon Key (Multi Task)", function()
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-        wait(1)
+        wait(0.5)
     end
 end)
 
