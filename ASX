@@ -543,7 +543,8 @@ MiscellanousChannel:Toggle(
     "Test",
     false,
     function(bool)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/test", true))()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(198.90817260742188, 6292.21337890625, -961.3734130859375)
+		wait(1)
     end
 )
 
