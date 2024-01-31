@@ -419,8 +419,8 @@ end)
 MiscellanousChannel:Toggle(
     "Teleport Around",
     false,
-    function(a)
-        settings.LoopTeleport = a
+    function(bool)
+        settings.LoopTeleport = true
     end
 )
 
@@ -584,5 +584,8 @@ game:GetService("RunService").Heartbeat:connect(function()
 	if settings.LoopTeleport then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/test", true))()
 		task.wait(0.155)
+    else
+        break
+    end
 	end
 end)
