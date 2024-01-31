@@ -11,6 +11,7 @@ local args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
+wait(60)
 wait(4)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.9429395198822021, 10491.564453125, -5799.13134765625) -- room 0
 wait(2)
