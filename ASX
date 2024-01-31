@@ -586,6 +586,6 @@ game:GetService("RunService").Heartbeat:connect(function()
 		task.wait(0.155)
     else
         break
-    end
+
 	end
 end)
