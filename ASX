@@ -501,7 +501,25 @@ MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", fun
     end
 end)
 
+--values 
 
+_G.Test = true
+
+-- function
+function Test()
+    while _G.Test == true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(198.46607971191406, 6286.962890625, -978.3875122070312)
+    end
+end
+
+MiscellanousChannel:Toggle(
+    "Test",
+    false,
+    function(bool)
+        _G.Test = bool
+        Test()
+    end
+)
 
 
 
