@@ -509,6 +509,7 @@ _G.Test = true
 function Test()
     while _G.Test == true do
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(198.46607971191406, 6286.962890625, -978.3875122070312)
+        wait(0.1)
     end
 end
 
