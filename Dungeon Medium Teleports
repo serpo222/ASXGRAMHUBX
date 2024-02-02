@@ -11,40 +11,78 @@ local args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 
-wait(60)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(998.4722900390625, 10491.5634765625, -5777.29443359375)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.43212890625, 10491.5625, -5704.41406255) 
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.6403198242188, 10496.8125, -5585.16748046875) 
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.8654174804688, 10496.8134765625, -5480.6650390625) 
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1000.3350219726562, 10496.8125, -5360.3505859375)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1001.36376953125, 10496.8125, -5243.7314453125)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1001.5614624023438, 10496.8125, -5128.00537109375)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(998.6668701171875, 10496.8125, -5017.16650390625)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1001.1864624023438, 10496.8125, -4902.41357421875)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(998.8911743164062, 10496.8125, -4785.48779296875)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.7074584960938, 10496.8125, -4670.326171875)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.3927612304688, 10496.8125, -4557.2900390625)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.0138549804688, 10496.8125, -4442.345703125)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.8865966796875, 10496.8125, -4327.0234375)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(999.5538940429688, 10496.8125, -4206.57861328125)
-wait(5.5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1000.5579223632812, 10496.8125, -4099.9775390625) -- room 16
-wait(10)
+wait(65)
 
+local teleport_table = {
+    location1 = Vector3.new(998.4722900390625, 10491.5634765625, -5777.29443359375),
+    location2 = Vector3.new(999.43212890625, 10491.5625, -5704.41406255),
+    location3 = Vector3.new(999.6403198242188, 10496.8125, -5585.16748046875),
+    location4 = Vector3.new(999.8654174804688, 10496.8134765625, -5480.6650390625),
+    location5 = Vector3.new(1000.3350219726562, 10496.8125, -5360.350585937),
+    location6 = Vector3.new(1001.36376953125, 10496.8125, -5243.7314453125),
+    location7 = Vector3.new(1001.5614624023438, 10496.8125, -5128.00537109375),
+    location8 = Vector3.new(998.6668701171875, 10496.8125, -5017.16650390625),
+    location9 = Vector3.new(1001.1864624023438, 10496.8125, -4902.41357421875),
+    location11 = Vector3.new(998.8911743164062, 10496.8125, -4785.48779296875)
+    location12 = Vector3.new(999.7074584960938, 10496.8125, -4670.326171875)
+    location13 = Vector3.new(999.3927612304688, 10496.8125, -4557.2900390625)
+    location14 = Vector3.new(999.0138549804688, 10496.8125, -4442.345703125)
+    location15 = Vector3.new(999.8865966796875, 10496.8125, -4327.0234375)
+    location16 = Vector3.new(999.5538940429688, 10496.8125, -4206.57861328125)
+    location17 = Vector3.new(1000.5579223632812, 10496.8125, -4099.9775390625) -- room 16
+}
+
+local tween_s = game:GetService('TweenService')
+local tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Linear)
+
+local lp = game.Players.LocalPlayer
+
+function bypass_teleport(v)
+    if lp.Character and 
+    lp.Character:FindFirstChild('HumanoidRootPart') then
+        local cf = CFrame.new(v)
+        local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+        a:Play()
+        -- a.Completed:Wait()
+        -- print('Teleporting Done!')
+    end
+end
+
+bypass_teleport(teleport_table.location1)
+wait(6)
+bypass_teleport(teleport_table.location2)
+wait(6)
+bypass_teleport(teleport_table.location3)
+wait(6)
+bypass_teleport(teleport_table.location4)
+wait(6)
+bypass_teleport(teleport_table.location5)
+wait(6)
+bypass_teleport(teleport_table.location6)
+wait(6)
+bypass_teleport(teleport_table.location7)
+wait(6)
+bypass_teleport(teleport_table.location8)
+wait(6)
+bypass_teleport(teleport_table.location9)
+wait(6)
+bypass_teleport(teleport_table.location10)
+wait(6)
+bypass_teleport(teleport_table.location11)
+wait(6)
+bypass_teleport(teleport_table.location12)
+wait(6)
+bypass_teleport(teleport_table.location13)
+wait(6)
+bypass_teleport(teleport_table.location14)
+wait(6)
+bypass_teleport(teleport_table.location15)
+wait(6)
+bypass_teleport(teleport_table.location16)
+wait(6)
+bypass_teleport(teleport_table.location17)
+
+wait(20)
 
 local args = {
     [1] = {
@@ -57,24 +95,3 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
