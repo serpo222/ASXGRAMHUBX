@@ -439,7 +439,7 @@ AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     end
     
     while true do
-        wait(1) -- Wait for 60 seconds
+        wait(5) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
@@ -453,7 +453,7 @@ AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
     end
     
     while true do
-        wait(60) -- Wait for 60 seconds
+        wait(5) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
@@ -467,7 +467,7 @@ AutoRotationChannel:Button("Alien Invasion :39", function()
     end
     
     while true do
-        wait(15) -- Wait for 60 seconds
+        wait(5) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
@@ -481,7 +481,7 @@ AutoRotationChannel:Button("Auto Medium Dungeon :15", function()
     end
     
     while true do
-        wait(15) -- Wait for 60 seconds
+        wait(5) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
@@ -495,7 +495,7 @@ AutoRotationChannel:Button("Auto Medium Dungeon :45", function()
     end
     
     while true do
-        wait(60) -- Wait for 60 seconds
+        wait(5) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
