@@ -27,11 +27,6 @@ SecretChannel:Label("So the price won't be cheap")
 
 
 
--- VALUES
-_G.CollectDailyRewards = true
-_G.SpinDungeonKey = true
-_G.InstantAvatarSpin = true
-
 
 
 
