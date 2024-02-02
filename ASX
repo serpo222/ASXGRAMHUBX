@@ -192,6 +192,7 @@ function CollectDailyRewards()
 end
 
 
+
 function LoopKillDefenseMobs()
     while _G.LoopKillDefenseMobs == true do
         task.wait(0.25)
