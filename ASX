@@ -27,313 +27,16 @@ SecretChannel:Label("So the price won't be cheap")
 
 
 
+-- VALUES
+_G.InstantAvatarSpin = true
+_G.SpinOPCrateKey = true
+_G.CollectDailyRewards = true
+_G.LoopKillDefenseMobs = true
 
+-- Functions
 
-
-
-DefenseChannel:Button("Remove Crystal", function()
-    game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
-end)
-
-DefenseChannel:Button("Teleport to & Start Defense", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
-
-    if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
-
-    firesignal(game:GetService("Players").LocalPlayer.PlayerGui._CENTER.Defense.Content.Public.MouseButton1Click)
-
-    task.wait(0.96)
-
-    local args = {
-        [1] = {
-            [1] = {
-               [1] = "\3",
-               [2] = "Defense",
-               [3] = "Join"
-           }
-       }
-    }
-
-    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-    end
-end)
-
-DefenseChannel:Button("Teleport back (in case you get flung out)", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
-end)
-
-DefenseChannel:Label("Autofarming Section, once you turn on it infinitely loops.")
-
-DefenseChannel:Button("Loop Kill Defense Mobs", function()
-    while true do
-        task.wait(0.25)
-        local Plr = game.Players.LocalPlayer
-        
-        local Enemn = nil
-        
-        local ClostDist = 280
-        
-        for _, v in pairs(workspace._ENEMIES.Defense:GetChildren()) do
-            
-            if v:FindFirstChild("HumanoidRootPart") then
-                
-                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
-                
-                if DistCryst < ClostDist then
-                    
-                    ClostDist = DistCryst
-                    Enemn = v
-                    
-                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
-                    
-                    local VirtualUser = game:GetService("VirtualUser")
-                    local function DoClicks(x, y)
-                        VirtualUser:CaptureController()
-                        VirtualUser:Button1Down(Vector2.new(x,y))
-                        task.wait(0.0001)
-                        VirtualUser:Button1Up(Vector2.new(x, y))
-                    end
-                    DoClicks(250, 250)
-                    break;
-                end
-            end
-        end
-    end
-end)
-
-DefenseChannel:Button("Loop teleport to the middle (5 seconds)", function()
-    game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
-    wait(1)
-    while true do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
-        wait(5)
-    end
-end)
-
-DefenseChannel:Button("Loop Start Defense", function()
-    while true do
-        wait(60)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
-
-    if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
-
-    firesignal(game:GetService("Players").LocalPlayer.PlayerGui._CENTER.Defense.Content.Public.MouseButton1Click)
-
-    task.wait(0.96)
-
-    local args = {
-        [1] = {
-            [1] = {
-               [1] = "\3",
-               [2] = "Defense",
-               [3] = "Join"
-           }
-       }
-    }
-
-    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-    end
-    end
-end)
-
-
-
-AlienInvasionChannel:Button("Enter Alien Invasion", function()
-    local args = {
-        [1] = {
-            [1] = {
-                [1] = "\3",
-                [2] = "AlienInvasion",
-                [3] = "Join"
-            }
-        }
-    }
-    
-    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-AlienInvasionChannel:Button("Teleport To The Center (Boss)", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13565.68359375, 5980.34033203125, 198.92274475097656)
-end)
-
-AlienInvasionChannel:Button("Loop Kill Alien Invasion Once You're close", function()
-    while true do
-        task.wait(0.25)
-        local Plr = game.Players.LocalPlayer
-        
-        local Enemn = nil
-        
-        local ClostDist = 280
-        
-        for _, v in pairs(workspace._ENEMIES.AlienInvasion:GetChildren()) do
-            
-            if v:FindFirstChild("HumanoidRootPart") then
-                
-                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
-                
-                if DistCryst < ClostDist then
-                    
-                    ClostDist = DistCryst
-                    Enemn = v
-                    
-                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
-                    
-                    local VirtualUser = game:GetService("VirtualUser")
-                    local function DoClicks(x, y)
-                        VirtualUser:CaptureController()
-                        VirtualUser:Button1Down(Vector2.new(x,y))
-                        task.wait(0.0001)
-                        VirtualUser:Button1Up(Vector2.new(x, y))
-                    end
-                    DoClicks(250, 250)
-                    break;
-                end
-            end
-        end
-    end
-end)
-
-
-
-
-MiscellanousChannel:Button("Position Finder", function()
-    local ScreenGui = Instance.new("ScreenGui")
-    local Frame = Instance.new("Frame")
-    local title = Instance.new("TextLabel")
-    local copy = Instance.new("TextButton")
-    local pos = Instance.new("TextBox")
-    local find = Instance.new("TextButton")
- 
-    --Properties:
- 
-    ScreenGui.Parent = game.CoreGui
-    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
- 
-    Frame.Parent = ScreenGui
-    Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-    Frame.BorderSizePixel = 0
-    Frame.Position = UDim2.new(0.639646292, 0, 0.399008662, 0)
-    Frame.Size = UDim2.new(0, 387, 0, 206)
-    Frame.Active = true
- 
-    title.Name = "title"
-    title.Parent = Frame
-    title.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    title.BorderSizePixel = 0
-    title.Size = UDim2.new(0, 387, 0, 50)
-    title.Font = Enum.Font.GothamBold
-    title.Text = "Position Finder"
-    title.TextColor3 = Color3.fromRGB(255, 255, 255)
-    title.TextSize = 30.000
-    title.TextWrapped = true
- 
-    copy.Name = "copy"
-    copy.Parent = Frame
-    copy.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    copy.BorderSizePixel = 0
-    copy.Position = UDim2.new(0.527131796, 0, 0.635922313, 0)
-    copy.Size = UDim2.new(0, 148, 0, 50)
-    copy.Font = Enum.Font.GothamSemibold
-    copy.Text = "Copy"
-    copy.TextColor3 = Color3.fromRGB(255, 255, 255)
-    copy.TextSize = 20.000
- 
-    pos.Name = "pos"
-    pos.Parent = Frame
-    pos.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    pos.BorderSizePixel = 0
-    pos.Position = UDim2.new(0.0904392749, 0, 0.305825233, 0)
-    pos.Size = UDim2.new(0, 317, 0, 50)
-    pos.Font = Enum.Font.GothamSemibold
-    pos.Text = ""
-    pos.TextColor3 = Color3.fromRGB(255, 255, 255)
-    pos.TextSize = 14.000
-    pos.TextWrapped = true
- 
-    find.Name = "find"
-    find.Parent = Frame
-    find.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    find.BorderSizePixel = 0
-    find.Position = UDim2.new(0.0904392898, 0, 0.635922313, 0)
-    find.Size = UDim2.new(0, 148, 0, 50)
-    find.Font = Enum.Font.GothamSemibold
-    find.Text = "Find"
-    find.TextColor3 = Color3.fromRGB(255, 255, 255)
-    find.TextSize = 20.000
- 
-    -- Scripts:
- 
-    local function UMTQ_fake_script() -- copy.LocalScript 
-	local script = Instance.new('LocalScript', copy)
- 
-	script.Parent.MouseButton1Click:Connect(function()
-		setclipboard(script.Parent.Parent.pos.Text)
-	end)
-    end
-    coroutine.wrap(UMTQ_fake_script)()
-    local function KJAYG_fake_script() -- Frame.Dragify 
-	local script = Instance.new('LocalScript', Frame)
- 
-	local UIS = game:GetService("UserInputService")
-	function dragify(Frame)
-	    dragToggle = nil
-	    local dragSpeed = 0
-	    dragInput = nil
-	    dragStart = nil
-	    local dragPos = nil
-	    function updateInput(input)
-	        local Delta = input.Position - dragStart
-	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
-	    end
-	    Frame.InputBegan:Connect(function(input)
-	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-	            dragToggle = true
-	            dragStart = input.Position
-	            startPos = Frame.Position
-	            input.Changed:Connect(function()
-	                if input.UserInputState == Enum.UserInputState.End then
-	                    dragToggle = false
-	                end
-	            end)
-	        end
-	    end)
-	    Frame.InputChanged:Connect(function(input)
-	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-	            dragInput = input
-	        end
-	    end)
-	    game:GetService("UserInputService").InputChanged:Connect(function(input)
-	        if input == dragInput and dragToggle then
-	            updateInput(input)
-	        end
-	    end)
-	end
- 
-	dragify(script.Parent)
-    end
-    coroutine.wrap(KJAYG_fake_script)()
-    local function EKBNYI_fake_script() -- find.LocalScript 
-	local script = Instance.new('LocalScript', find)
- 
-	script.Parent.MouseButton1Down:Connect(function()
-		script.Parent.Parent.pos.Text = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
-	end)
-    end
-    coroutine.wrap(EKBNYI_fake_script)()
-end)
-
-MiscellanousChannel:Button("Walkspeed 100", function()  
-    getgenv().WalkSpeedValue = 100; --set your desired walkspeed here
-    local Player = game:service'Players'.LocalPlayer;
-    Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
-    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
-    end)
-    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
-end)
-
-MiscellanousChannel:Button("Instant Avatar Spin", function()
-    while true do
+function InstantAvatarSpin()
+    while _G.InstantAvatarSpin == true do
         wait(0.1)
         local args = {
         [1] = {
@@ -347,10 +50,27 @@ MiscellanousChannel:Button("Instant Avatar Spin", function()
     
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
     end
-end)
+end
 
-MiscellanousChannel:Button("Autocollect Daily Rewards", function()
-    while true do
+function SpinOPCrateKey()
+    while _G.SpinOPCrateKey == true do
+        local args = {
+            [1] = {
+                [1] = {
+                    [1] = "\3",
+                    [2] = "OPCrate",
+                    [3] = "Spin"
+                }
+            }
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        wait(1)
+    end
+end
+
+function CollectDailyRewards()
+    while _G.CollectDailyRewards == true do
         local args = {
             [1] = {
                 [1] = {
@@ -469,24 +189,225 @@ MiscellanousChannel:Button("Autocollect Daily Rewards", function()
 
         wait(600)
     end
+end
+
+function LoopKillDefenseMobs()
+    while _G.LoopKillDefenseMobs == true do
+        task.wait(0.25)
+    local Plr = game.Players.LocalPlayer
+
+    local Enemn = nil
+
+    local ClostDist = -- Put You Distance Num Here
+
+    for _, v in pairs(workspace._ENEMIES.Defense:GetChildren()) do
+
+    if v:FindFirstChild("HumanoidRootPart") then
+
+    local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
+
+    if DistCryst < ClostDist then
+
+    ClostDist = DistCryst
+    Enemn = v
+
+    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25, 0, 0)
+
+    local VirtualUser = game:GetService("VirtualUser")
+    local function DoClicks(x, y)
+    VirtualUser:CaptureController()
+    VirtualUser:Button1Down(Vector2.new(x, y))
+    task.wait(0.0001)
+    VirtualUser:Button1Up(Vector2.new(x, y))
+    end
+    DoClicks(250, 250)
+    break;
+    end
+    end
+    end
+    end
+    end
+end
+
+
+DefenseChannel:Button("Remove Crystal", function()
+    game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
 end)
 
-MiscellanousChannel:Button("Spin Dungeon Key (Multi Task)", function()
-    while true do
-        local args = {
+DefenseChannel:Button("Teleport to & Start Defense", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
+
+    if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
+
+    firesignal(game:GetService("Players").LocalPlayer.PlayerGui._CENTER.Defense.Content.Public.MouseButton1Click)
+
+    task.wait(0.96)
+
+    local args = {
+        [1] = {
             [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "OPCrate",
-                    [3] = "Spin"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-        wait(1)
+               [1] = "\3",
+               [2] = "Defense",
+               [3] = "Join"
+           }
+       }
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
     end
 end)
+
+DefenseChannel:Button("Teleport back (in case you get flung out)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
+end)
+
+DefenseChannel:Label("Autofarming Section, once you turn on it infinitely loops.")
+
+DefenseChannel:Toggle(
+    "Loop Kill Defense Mobs",
+    false,
+    function(bool)
+        _G.LoopKillDefenseMobs = bool
+        LoopKillDefenseMobs()
+    end
+)
+
+DefenseChannel:Button("Loop teleport to the middle (5 seconds)", function()
+    game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
+    wait(1)
+    while true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
+        wait(5)
+    end
+end)
+
+DefenseChannel:Button("Loop Start Defense", function()
+    while true do
+        wait(60)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
+
+    if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
+
+    firesignal(game:GetService("Players").LocalPlayer.PlayerGui._CENTER.Defense.Content.Public.MouseButton1Click)
+
+    task.wait(0.96)
+
+    local args = {
+        [1] = {
+            [1] = {
+               [1] = "\3",
+               [2] = "Defense",
+               [3] = "Join"
+           }
+       }
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
+    end
+end)
+
+
+
+AlienInvasionChannel:Button("Enter Alien Invasion", function()
+    local args = {
+        [1] = {
+            [1] = {
+                [1] = "\3",
+                [2] = "AlienInvasion",
+                [3] = "Join"
+            }
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end)
+
+AlienInvasionChannel:Button("Teleport To The Center (Boss)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13565.68359375, 5980.34033203125, 198.92274475097656)
+end)
+
+AlienInvasionChannel:Button("Loop Kill Alien Invasion Once You're close", function()
+    while true do
+        task.wait(0.25)
+        local Plr = game.Players.LocalPlayer
+        
+        local Enemn = nil
+        
+        local ClostDist = 280
+        
+        for _, v in pairs(workspace._ENEMIES.AlienInvasion:GetChildren()) do
+            
+            if v:FindFirstChild("HumanoidRootPart") then
+                
+                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
+                
+                if DistCryst < ClostDist then
+                    
+                    ClostDist = DistCryst
+                    Enemn = v
+                    
+                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
+                    
+                    local VirtualUser = game:GetService("VirtualUser")
+                    local function DoClicks(x, y)
+                        VirtualUser:CaptureController()
+                        VirtualUser:Button1Down(Vector2.new(x,y))
+                        task.wait(0.0001)
+                        VirtualUser:Button1Up(Vector2.new(x, y))
+                    end
+                    DoClicks(250, 250)
+                    break;
+                end
+            end
+        end
+    end
+end)
+
+
+
+
+MiscellanousChannel:Button("Position Finder", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/PositionFinder", true))()
+end)
+
+MiscellanousChannel:Button("Walkspeed 100", function()  
+    getgenv().WalkSpeedValue = 100; --set your desired walkspeed here
+    local Player = game:service'Players'.LocalPlayer;
+    Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+    end)
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+end)
+
+
+MiscellanousChannel:Toggle(
+    "Instant Avatar Spin",
+    false,
+    function(bool)
+        _G.InstantAvatarSpin = bool
+        InstantAvatarSpin()
+    end
+)
+
+
+MiscellanousChannel:Toggle(
+    "Spin OP Crate Key",
+    false,
+    function(bool)
+        _G.SpinOPCrateKey = bool
+        SpinOPCrateKey()
+    end
+)
+
+MiscellanousChannel:Toggle(
+    "Auto Collect Daily Rewards (checks every 3 seconds)",
+    false,
+    function(bool)
+        _G.CollectDailyRewards = bool
+        CollectDailyRewards()
+    end
+)
 
 MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", function()
     local function checkTime()
