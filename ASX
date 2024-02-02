@@ -263,14 +263,7 @@ end)
 
 DefenseChannel:Label("Autofarming Section, once you turn on it infinitely loops.")
 
-DefenseChannel:Toggle(
-    "Loop Kill Defense Mobs",
-    false,
-    function(bool)
-        _G.LoopKillDefenseMobs = bool
-        LoopKillDefenseMobs()
-    end
-)
+
 
 DefenseChannel:Button("Loop teleport to the middle (5 seconds)", function()
     game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
