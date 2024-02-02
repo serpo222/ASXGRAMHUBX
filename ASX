@@ -28,6 +28,7 @@ SecretChannel:Label("So the price won't be cheap")
 _G.InstantAvatarSpin = true
 _G.SpinOPCrateKey = true
 _G.CollectDailyRewards = true
+_G.LoopKillDefenseMobs = true
 
 -- Functions
 
@@ -187,7 +188,46 @@ function CollectDailyRewards()
     end
 end
 
+function LoopKillDefenseMobs()
+    while _G.LoopKillDefenseMobs == true do
+        task.wait(0.25)
+        local Plr = game.Players.LocalPlayer
+        
+        local Enemn = nil
+        
+        local ClostDist = 280
+        
+        for _, v in pairs(workspace._ENEMIES.Defense:GetChildren()) do
+            
+            if v:FindFirstChild("HumanoidRootPart") then
+                
+                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
+                
+                if DistCryst < ClostDist then
+                    
+                    ClostDist = DistCryst
+                    Enemn = v
+                    
+                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
+                    
+                    local VirtualUser = game:GetService("VirtualUser")
+                    local function DoClicks(x, y)
+                        VirtualUser:CaptureController()
+                        VirtualUser:Button1Down(Vector2.new(x,y))
+                        task.wait(0.0001)
+                        VirtualUser:Button1Up(Vector2.new(x, y))
+                    end
+                    DoClicks(250, 250)
+                    break;
+                end
+            end
+        end
+    end
+end
 
+
+
+-- GUI
 
 DefenseChannel:Button("Remove Crystal", function()
     game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
@@ -222,42 +262,14 @@ end)
 
 DefenseChannel:Label("Autofarming Section, once you turn on it infinitely loops.")
 
-DefenseChannel:Button("Loop Kill Defense Mobs", function()
-    while true do
-        task.wait(0.25)
-        local Plr = game.Players.LocalPlayer
-        
-        local Enemn = nil
-        
-        local ClostDist = 280
-        
-        for _, v in pairs(workspace._ENEMIES.Defense:GetChildren()) do
-            
-            if v:FindFirstChild("HumanoidRootPart") then
-                
-                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
-                
-                if DistCryst < ClostDist then
-                    
-                    ClostDist = DistCryst
-                    Enemn = v
-                    
-                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
-                    
-                    local VirtualUser = game:GetService("VirtualUser")
-                    local function DoClicks(x, y)
-                        VirtualUser:CaptureController()
-                        VirtualUser:Button1Down(Vector2.new(x,y))
-                        task.wait(0.0001)
-                        VirtualUser:Button1Up(Vector2.new(x, y))
-                    end
-                    DoClicks(250, 250)
-                    break;
-                end
-            end
-        end
+DefenseChannel:Toggle(
+    "Loop Kill Defense Mobs",
+    false,
+    function(bool)
+        _G.LoopKillDefenseMobs = bool
+        LoopKillDefenseMobs()
     end
-end)
+)
 
 DefenseChannel:Button("Loop teleport to the middle (5 seconds)", function()
     game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
