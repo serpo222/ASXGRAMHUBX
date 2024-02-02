@@ -4,7 +4,7 @@ repeat wait() until game:IsLoaded()  -- anti afk
 end)
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
-local win = DiscordLib:Window("ASX GRAM HUB")
+local win = DiscordLib:Window("ASX GRAM HUB ARJUNS CAR ON A ROUNDABOUT - MADE BY TOP GG")
 
 local serv = win:Server("Anime Souls X", "")
 local DefenseChannel = serv:Channel("Defense Mode")
@@ -437,7 +437,7 @@ MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", fun
     end
     
     while true do
-        wait(60) -- Wait for 60 seconds
+        wait(5) -- Wait for 60 seconds
         checkTime() -- Check the time
     end
 end)
