@@ -240,7 +240,7 @@ end
 
 function LoopStartDefense()
     while _G.LoopStartDefense == true do
-        wait(60)
+        wait(30)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
 
     if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
@@ -483,7 +483,7 @@ end)
 AutoRotationChannel:Button("Alien Invasion :39", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
-        if currentTime.min == 30 then
+        if currentTime.min == 39 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Alien%20Invasion", true))()
         end
     end
