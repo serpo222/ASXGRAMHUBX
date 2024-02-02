@@ -100,7 +100,7 @@ end)
 
 DefenseChannel:Label("Autofarming Section, once you turn on it infinitely loops.")
 
-MiscellanousChannel:Toggle(
+DefenseChannel:Toggle(
     "Loop Attack Enemies",
     false,
     function(bool)
