@@ -232,8 +232,6 @@ end
 
 function LoopTeleportToDefenseMiddle()
     while _G.LoopTeleportToDefenseMiddle == true do
-        game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
-        wait(1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
         wait(5)
     end
@@ -241,7 +239,7 @@ end
 
 function LoopStartDefense()
     while _G.LoopStartDefense == true do
-        wait(60)
+        wait(30)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
 
     if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
