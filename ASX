@@ -319,7 +319,7 @@ DefenseChannel:Toggle(
 )
 
 DefenseChannel:Toggle(
-    "Loop Start Defense,
+    "Loop Start Defense",
     false,
     function(bool)
         _G.LoopStartDefense = bool
