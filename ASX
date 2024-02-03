@@ -6,7 +6,7 @@ end)
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("ASX GRAM HUB")
 
-local serv = win:Server("Anime Souls X", "")
+local serv = win:Server("Anime Souls X", "http://www.roblox.com/asset/?id=8932053668")
 local DefenseChannel = serv:Channel("Defense Mode")
 local DungeonChannel = serv:Channel("Dungeon Mode")
 local AutoRotationChannel = serv:Channel("Auto Rotations")
