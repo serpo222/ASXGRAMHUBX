@@ -13,6 +13,7 @@ local AutoRotationChannel = serv:Channel("Auto Rotations")
 local AlienInvasionChannel = serv:Channel("Alien Invasion")
 local MiscellanousChannel = serv:Channel("Miscellanous")
 local SecretBossesChannel = serv:Channel("Secret Bosses")
+local InformationChannel = serv:Channel("Info")
 
 local serv2 = win:Server("PRIVATE OFFER", "http://www.roblox.com/asset/?id=8932053668")
 local SecretChannel = serv2:Channel("Roll Any Secret")
@@ -613,7 +614,8 @@ SecretBossesChannel:Button("Titan District", function()
 end)
 
 
-
+InformationChannel:Label("The titan range i used for dungeons was 45, anything higher will work.")
+InformationChannel:Label("I recommend disabling avatar skill")
 
 
 
