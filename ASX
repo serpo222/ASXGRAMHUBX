@@ -4,7 +4,7 @@ repeat wait() until game:IsLoaded()  -- anti afk
 end)
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
-local win = DiscordLib:Window("ASX GRAM HUB ARJUNS CAR ON A ROUNDABOUT - MADE BY TOP GG")
+local win = DiscordLib:Window("ASX GRAM HUB")
 
 local serv = win:Server("Anime Souls X", "")
 local DefenseChannel = serv:Channel("Defense Mode")
@@ -278,6 +278,9 @@ end
 
 -- GUI
 
+DungeonChannel:Label("So far everything is in auto rotations")
+DungeonChannel:Label("might add independent functions here")
+
 DefenseChannel:Button("Remove Crystal", function()
     game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
 end)
@@ -321,7 +324,7 @@ DefenseChannel:Toggle(
 )
 
 DefenseChannel:Toggle(
-    "Teleport To The Middle LOOP",
+    "Teleport To The Middle LOOP (remove crystal first)",
     false,
     function(bool)
         _G.LoopTeleportToDefenseMiddle = bool
