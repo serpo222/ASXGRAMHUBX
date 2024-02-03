@@ -28,6 +28,7 @@ SecretChannel:Label("So the price won't be cheap")
 _G.InstantAvatarSpin = true
 _G.SpinOPCrateKey = true
 _G.CollectDailyRewards = true
+_G.AutoFriendRequestAll = true
 
 _G.LoopKillDefenseMobs = true
 _G.LoopTeleportToDefenseMiddle = true
@@ -264,6 +265,16 @@ function LoopStartDefense()
     end
 end
 
+function AutoFriendRequestAll()
+    while _G.AutoFriendRequestAll == true do
+        local plrs = game:GetService('Players')
+            for i,v in pairs(plrs:GetChildren()) do
+                wait(1)
+            plrs.LocalPlayer:RequestFriendship(v)
+        end
+    end
+end
+
 
 -- GUI
 
@@ -399,7 +410,6 @@ MiscellanousChannel:Button("Walkspeed 100", function()
     Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
 end)
 
-
 MiscellanousChannel:Toggle(
     "Instant Avatar Spin",
     false,
@@ -408,7 +418,6 @@ MiscellanousChannel:Toggle(
         InstantAvatarSpin()
     end
 )
-
 
 MiscellanousChannel:Toggle(
     "Spin OP Crate Key",
@@ -441,6 +450,15 @@ MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", fun
         checkTime() -- Check the time
     end
 end)
+
+MiscellanousChannel:Toggle(
+    "Auto Friend Request All",
+    false,
+    function(bool)
+        _G.AutoFriendRequestAll = bool
+        AutoFriendRequestAll()
+    end
+)
 
 
 
