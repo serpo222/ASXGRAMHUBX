@@ -45,10 +45,39 @@ function bypass_teleport(v)
     end
 end
 
-bfor _, location in pairs(teleport_table) do
-    bypass_teleport(location)
-    wait(6) -- Wait 6 seconds between each teleport
-end
+bypass_teleport(teleport_table.location1)
+wait(6)
+bypass_teleport(teleport_table.location2)
+wait(6)
+bypass_teleport(teleport_table.location3)
+wait(6)
+bypass_teleport(teleport_table.location4)
+wait(6)
+bypass_teleport(teleport_table.location5)
+wait(6)
+bypass_teleport(teleport_table.location6)
+wait(6)
+bypass_teleport(teleport_table.location7)
+wait(6)
+bypass_teleport(teleport_table.location8)
+wait(6)
+bypass_teleport(teleport_table.location9)
+wait(6)
+bypass_teleport(teleport_table.location10)
+wait(6)
+bypass_teleport(teleport_table.location11)
+wait(6)
+bypass_teleport(teleport_table.location12)
+wait(6)
+bypass_teleport(teleport_table.location13)
+wait(6)
+bypass_teleport(teleport_table.location14)
+wait(6)
+bypass_teleport(teleport_table.location15)
+wait(6)
+bypass_teleport(teleport_table.location16)
+wait(6)
+bypass_teleport(teleport_table.location17)
 
 wait(20)
 
