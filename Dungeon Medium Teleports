@@ -4,7 +4,7 @@ local args = {
             [1] = "\3",
             [2] = "Dungeon",
             [3] = "Join",
-            [4] = "Easy"
+            [4] = "Medium"
         }
     }
 }
@@ -14,57 +14,22 @@ game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpa
 wait(65)
 
 local teleport_table = {
-    location1 = Vector3.new(0.1975850611925125, 10491.5625, -5778.36474609375),
-    location1point5 = Vector3.new(0.07021011412143707, 10491.5625, -5701.50830078125),
-    location2 = Vector3.new(1.4314048290252686, 10491.5625, -5584.86767578125),
-    location3 = Vector3.new(1.9745649099349976, 10491.5625, -5475.2392578125),
-    location4 = Vector3.new(2.086313247680664, 10491.5625, -5362.68701171875),
-    location5 = Vector3.new(0.4636152684688568, 10491.5615234375, -5242.38525390625),
-    location6 = Vector3.new(-0.5329077839851379, 10491.5615234375, -5129.73046875),
-    location7 = Vector3.new(0.47220972180366516, 10491.5625, -5013.92822265625),
-    location8 = Vector3.new(0.21360111236572266, 10491.5625, -4902.55517578125),
-    location9 = Vector3.new(-0.22227181494235992, 10491.5625, -4790.78271484375),
-    location11 = Vector3.new(-0.6604030132293701, 10491.5625, -4675.65478515625),
-    location12 = Vector3.new(-1.3565669059753418, 10491.5634765625, -4552.90380859375),
-    location13 = Vector3.new(0.4512728452682495, 10491.5625, -4447.03173828125),
-    location14 = Vector3.new(0.48279696702957153, 10491.5625, -4326.84912109375),
-    location15 = Vector3.new(0.5828438401222229, 10491.5634765625, -4210.017578125),
-    location16 = Vector3.new(0.6274644732475281, 10491.5625, -4095.803466796875),
-    location17 = Vector3.new(0.8999897241592407, 10491.5625, -3986.083740234375),
-    location18 = Vector3.new(-0.3283369243144989, 10491.5625, -3866.117919921875),
-    location19 = Vector3.new(0.05258119851350784, 10491.5625, -3750.083740234375),
-    location20 = Vector3.new(2.3218994140625, 10491.5625, -3637.77294921875),
-    location21 = Vector3.new(0.8425165414810181, 10491.5625, -3523.248779296875),
-    location22 = Vector3.new(-0.24066399037837982, 10491.5625, -3408.750732421875),
-    location23 = Vector3.new(0.1827256679534912, 10491.5625, -3296.010009765625),
-    location24 = Vector3.new(-0.4674615263938904, 10491.5654296875, -3176.165771484375),
-    location25 = Vector3.new(1.0633153915405273, 10491.5625, -3061.869140625),
-    location26 = Vector3.new(0.3405831456184387, 10491.5625, -2946.75732421875),
-    location27 = Vector3.new(0.06572496145963669, 10491.5625, -2833.255126953125),
-    location28 = Vector3.new(0.7872474193572998, 10491.5634765625, -2716.455810546875),
-    location29 = Vector3.new(-0.599963366985321, 10491.5625, -2602.736328125),
-    location30 = Vector3.new(0.11578259617090225, 10491.5625, -2487.11083984375),
-    location31 = Vector3.new(0.4025128185749054, 10491.5625, -2372.352783203125),
-    location32 = Vector3.new(0.7629892826080322, 10491.5654296875, -2256.879150390625),
-    location33 = Vector3.new(0.7364151477813721, 10491.5625, -2138.806884765625),
-    location34 = Vector3.new(-0.04581254720687866, 10491.5625, -2025.34521484375),
-    location35 = Vector3.new(1.132891058921814, 10491.5625, -1913.8704833984375),
-    location36 = Vector3.new(1.1596201658248901, 10491.5625, -1799.2178955078125),
-    location37 = Vector3.new(0.36488234996795654, 10491.5615234375, -1686.10400390625),
-    location38 = Vector3.new(1.4082036018371582, 10491.5625, -1571.010498046875),
-    location39 = Vector3.new(0.5038576126098633, 10491.5625, -1455.152099609375),
-    location40 = Vector3.new(-0.32143089175224304, 10491.5634765625, -1334.9532470703125),
-    location41 = Vector3.new(-0.6182143688201904, 10491.5625, -1222.6033935546875),
-    location42 = Vector3.new(0.6195392608642578, 10491.5625, -1105.424072265625),
-    location43 = Vector3.new(0.2974798083305359, 10491.5625, -992.7825317382812),
-    location44 = Vector3.new(0.7297097444534302, 10491.5615234375, -878.873291015625),
-    location45 = Vector3.new(0.32196372747421265, 10491.5625, -764.4196166992188),
-    location46 = Vector3.new(0.16271215677261353, 10491.5634765625, -647.3203125),
-    location47 = Vector3.new(0.827486515045166, 10491.5625, -533.1217651367188),
-    location48 = Vector3.new(0.8280550241470337, 10491.5634765625, -417.3028564453125),
-    location49 = Vector3.new(1.1037836074829102, 10491.5625, -301.2296142578125),
-    location50 = Vector3.new(-0.18508820235729218, 10491.5625, -187.87167358398438),
-    location51 = Vector3.new(-0.036131054162979126, 10491.5673828125, -72.23731231689453)
+    location1 = Vector3.new(998.4722900390625, 10491.5634765625, -5777.29443359375),
+    location2 = Vector3.new(999.43212890625, 10491.5625, -5704.41406255),
+    location3 = Vector3.new(999.6403198242188, 10496.8125, -5585.16748046875),
+    location4 = Vector3.new(999.8654174804688, 10496.8134765625, -5480.6650390625),
+    location5 = Vector3.new(1000.3350219726562, 10496.8125, -5360.350585937),
+    location6 = Vector3.new(1001.36376953125, 10496.8125, -5243.7314453125),
+    location7 = Vector3.new(1001.5614624023438, 10496.8125, -5128.00537109375),
+    location8 = Vector3.new(998.6668701171875, 10496.8125, -5017.16650390625),
+    location9 = Vector3.new(1001.1864624023438, 10496.8125, -4902.41357421875),
+    location11 = Vector3.new(998.8911743164062, 10496.8125, -4785.48779296875),
+    location12 = Vector3.new(999.7074584960938, 10496.8125, -4670.326171875),
+    location13 = Vector3.new(999.3927612304688, 10496.8125, -4557.2900390625),
+    location14 = Vector3.new(999.0138549804688, 10496.8125, -4442.345703125),
+    location15 = Vector3.new(999.8865966796875, 10496.8125, -4327.0234375),
+    location16 = Vector3.new(999.5538940429688, 10496.8125, -4206.57861328125),
+    location17 = Vector3.new(1000.5579223632812, 10496.8125, -4099.9775390625) -- room 16
 }
 
 local tween_s = game:GetService('TweenService')
@@ -83,12 +48,39 @@ function bypass_teleport(v)
     end
 end
 
-for _, location in pairs(teleport_table) do
-    bypass_teleport(location)
-    wait(6) -- Wait 6 seconds between each teleport
-end
-
-
+bypass_teleport(teleport_table.location1)
+wait(6)
+bypass_teleport(teleport_table.location2)
+wait(6)
+bypass_teleport(teleport_table.location3)
+wait(6)
+bypass_teleport(teleport_table.location4)
+wait(6)
+bypass_teleport(teleport_table.location5)
+wait(6)
+bypass_teleport(teleport_table.location6)
+wait(6)
+bypass_teleport(teleport_table.location7)
+wait(6)
+bypass_teleport(teleport_table.location8)
+wait(6)
+bypass_teleport(teleport_table.location9)
+wait(6)
+bypass_teleport(teleport_table.location10)
+wait(6)
+bypass_teleport(teleport_table.location11)
+wait(6)
+bypass_teleport(teleport_table.location12)
+wait(6)
+bypass_teleport(teleport_table.location13)
+wait(6)
+bypass_teleport(teleport_table.location14)
+wait(6)
+bypass_teleport(teleport_table.location15)
+wait(6)
+bypass_teleport(teleport_table.location16)
+wait(6)
+bypass_teleport(teleport_table.location17)
 
 wait(20)
 
