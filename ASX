@@ -4,7 +4,7 @@ repeat wait() until game:IsLoaded()  -- anti afk
 end)
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
-local win = DiscordLib:Window("ASX GRAM HUB https://discord.gg/YfRHKrwZ8K discord: grammerscripting")
+local win = DiscordLib:Window("ASX GRAM HUB https://discord.gg/FAPCdbW9q6 discord: grammerscripting")
 
 local serv = win:Server("Anime Souls X", "")
 local DefenseChannel = serv:Channel("Defense Mode")
@@ -464,6 +464,9 @@ MiscellanousChannel:Toggle(
     end
 )
 
+MiscellanousChannel:Button("Fast Mode", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Fast%20Mode", true))()
+end)
 
 
 
