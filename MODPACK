@@ -547,6 +547,64 @@ AutoRotationChannel:Button("Auto Medium Dungeon :45", function()
     end
 end)
 
+AutoRotationChannel:Label("Raids depend on when the server started, occur every 30 mins.")
+AutoRotationChannel:Label("Enable which option applies or select all of them.")
+
+AutoRotationChannel:Button("Auto Raids :07", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 07 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
+        end
+    end
+    
+    while true do
+        wait(5) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+AutoRotationChannel:Button("Auto Raids :23", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 23 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
+        end
+    end
+    
+    while true do
+        wait(5) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+AutoRotationChannel:Button("Auto Raids :40", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 40 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
+        end
+    end
+    
+    while true do
+        wait(5) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+AutoRotationChannel:Button("Auto Raids :53", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 53 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
+        end
+    end
+    
+    while true do
+        wait(5) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
 
 
 
