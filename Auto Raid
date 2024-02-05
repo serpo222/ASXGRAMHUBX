@@ -1,0 +1,18 @@
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2558.920654296875, 2830.97998046875, 6937.27490234375)
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2558.920654296875, 2830.97998046875, 6937.27490234375)
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2558.920654296875, 2830.97998046875, 6937.27490234375)
+wait(1)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2557.973876953125, 2832.140380859375, 7062.283203125) -- npc 1
+wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2512.455322265625, 2832.1416015625, 7113.24169921875) -- npc 2
+wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2560.3955078125, 2832.142333984375, 7178.41748046875) -- npc 3
+wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2608.169189453125, 2832.14111328125, 7116.6015625) -- npc 4
+wait(3)
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2558.49658203125, 2832.1416015625, 7121.01611328125) -- boss
