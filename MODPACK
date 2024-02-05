@@ -474,9 +474,6 @@ end)
 
 
 
-
-AutoRotationChannel:Label("Turn on when a new minute passes")
-
 AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
@@ -568,20 +565,6 @@ AutoRotationChannel:Button("Auto Raids :23", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
         if currentTime.min == 23 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Button("Auto Raids :40", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 40 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
         end
     end
