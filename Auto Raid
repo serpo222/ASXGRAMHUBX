@@ -1,3 +1,17 @@
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "Raid",
+            [3] = "Join"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+wait(3)
+
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2558.920654296875, 2830.97998046875, 6937.27490234375)
 wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2558.920654296875, 2830.97998046875, 6937.27490234375)
