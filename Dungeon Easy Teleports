@@ -2,6 +2,20 @@ local args = {
     [1] = {
         [1] = {
             [1] = "\3",
+            [2] = "Raid",
+            [3] = "Quit"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+wait(0.5)
+
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
             [2] = "Dungeon",
             [3] = "Join",
             [4] = "Easy"
