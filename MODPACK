@@ -405,13 +405,8 @@ MiscellanousChannel:Button("Position Finder", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/PositionFinder", true))()
 end)
 
-MiscellanousChannel:Button("Walkspeed 100", function()  
-    getgenv().WalkSpeedValue = 100; --set your desired walkspeed here
-    local Player = game:service'Players'.LocalPlayer;
-    Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
-    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
-    end)
-    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+MiscellanousChannel:Slider("Walkspeed", 0, 300, 25, function(t)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
 end)
 
 MiscellanousChannel:Toggle(
