@@ -542,10 +542,10 @@ end)
 AutoRotationChannel:Label("Raids depend on when the server started, occur every 30 mins.")
 AutoRotationChannel:Label("Enable which option applies or select all of them.")
 
-AutoRotationChannel:Button("Auto Raids :07", function()
+AutoRotationChannel:Button("Auto Raids :09", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
-        if currentTime.min == 07 then
+        if currentTime.min == 09 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
         end
     end
