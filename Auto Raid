@@ -68,6 +68,21 @@ wait(5)
 
 -- 3rd rotation done
 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2552.509765625, 2832.14208984375, 7075.83984375) -- npc 1
+wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2508.368896484375, 2832.142578125, 7119.248046875) -- npc 2
+wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2605.27099609375, 2832.141845703125, 7125.0263671875) -- npc 3
+wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2562.209716796875, 2832.142578125, 7178.13720703125) -- npc 4
+wait(3)
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2561.0966796875, 2832.142578125, 7128.01611328125) -- boss
+wait(5)
+
+-- 4th rotation done (backup)
+
 
 local args = {
     [1] = {
