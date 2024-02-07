@@ -30,6 +30,7 @@ _G.InstantAvatarSpin = true
 _G.SpinOPCrateKey = true
 _G.CollectDailyRewards = true
 _G.AutoFriendRequestAll = true
+_G.NoCollision = true
 
 _G.LoopKillDefenseMobs = true
 _G.LoopTeleportToDefenseMiddle = true
@@ -276,6 +277,23 @@ function AutoFriendRequestAll()
     end
 end
 
+function NoCollision()
+    while _G.NoCollision == true do
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+
+        local function disableCollisions(part)
+    part.CanCollide = false
+    end
+
+    for _, part in ipairs(character:GetDescendants()) do
+    if part:IsA("BasePart") then
+        disableCollisions(part)
+    end
+    end
+    end
+end
+
 
 -- GUI
 
@@ -342,6 +360,8 @@ DefenseChannel:Toggle(
     end
 )
 
+DefenseChannel:Label("Enable No Collision in Misc if you're having issues")
+
 
 AlienInvasionChannel:Button("Enter Alien Invasion", function()
     local args = {
@@ -405,9 +425,45 @@ MiscellanousChannel:Button("Position Finder", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/PositionFinder", true))()
 end)
 
+MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", function()
+    local function checkTime()
+        local currentTime = os.date("*t", os.time())
+        if currentTime.min == 30 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/ShipRewards", true))()
+        end
+    end
+    
+    while true do
+        wait(5) -- Wait for 60 seconds
+        checkTime() -- Check the time
+    end
+end)
+
+MiscellanousChannel:Button("Fast Mode", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Fast%20Mode", true))()
+end)
+
 MiscellanousChannel:Slider("Walkspeed", 0, 300, 25, function(t)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
 end)
+
+MiscellanousChannel:Toggle(
+    "No Collision",
+    false,
+    function(bool)
+        _G.NoCollision = bool
+        NoCollision()
+    end
+)
+
+MiscellanousChannel:Toggle(
+    "Auto Friend Request All",
+    false,
+    function(bool)
+        _G.AutoFriendRequestAll = bool
+        AutoFriendRequestAll()
+    end
+)
 
 MiscellanousChannel:Toggle(
     "Instant Avatar Spin",
@@ -435,35 +491,6 @@ MiscellanousChannel:Toggle(
         CollectDailyRewards()
     end
 )
-
-MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 30 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/ShipRewards", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-MiscellanousChannel:Toggle(
-    "Auto Friend Request All",
-    false,
-    function(bool)
-        _G.AutoFriendRequestAll = bool
-        AutoFriendRequestAll()
-    end
-)
-
-MiscellanousChannel:Button("Fast Mode", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Fast%20Mode", true))()
-end)
-
-
 
 
 
@@ -620,7 +647,6 @@ SecretBossesChannel:Button("Loop Through All (should be in their map, might bug)
         end
     end
 end)
-
 SecretBossesChannel:Button("Cursed Zone", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(567.4405517578125, 22.376876831054688, -166.1839141845703)
 end)
