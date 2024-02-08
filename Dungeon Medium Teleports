@@ -79,7 +79,7 @@ bypass_teleport(teleport_table.location16)
 wait(6)
 bypass_teleport(teleport_table.location17) -- room 16
 
-wait(20)
+wait(10)
 
 local args = {
     [1] = {
