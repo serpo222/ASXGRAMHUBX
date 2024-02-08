@@ -30,7 +30,6 @@ _G.InstantAvatarSpin = true
 _G.SpinOPCrateKey = true
 _G.CollectDailyRewards = true
 _G.AutoFriendRequestAll = true
-_G.NoCollision = true
 
 _G.LoopKillDefenseMobs = true
 _G.LoopTeleportToDefenseMiddle = true
@@ -279,29 +278,13 @@ function AutoFriendRequestAll()
     end
 end
 
-function NoCollision()
-    while _G.NoCollision == true do
-        local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-
-        local function disableCollisions(part)
-    part.CanCollide = false
-    end
-
-    for _, part in ipairs(character:GetDescendants()) do
-    if part:IsA("BasePart") then
-        disableCollisions(part)
-    end
-    end
-    end
-end
 
 
 function AutoEasyMode()
     while _G.AutoEasyMode == true do
         local function checkTime()
             local currentTime = os.date("*t", os.time())
-            if currentTime.min == 00 then
+            if currentTime.min == 30 then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Easy%20Teleports", true))()
             end
         end
@@ -378,7 +361,6 @@ DefenseChannel:Toggle(
     end
 )
 
-DefenseChannel:Label("Enable No Collision in Misc if you're having issues")
 
 
 AlienInvasionChannel:Button("Enter Alien Invasion", function()
@@ -465,14 +447,7 @@ MiscellanousChannel:Slider("Walkspeed", 0, 300, 25, function(t)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
 end)
 
-MiscellanousChannel:Toggle(
-    "No Collision",
-    false,
-    function(bool)
-        _G.NoCollision = bool
-        NoCollision()
-    end
-)
+
 
 MiscellanousChannel:Toggle(
     "Auto Friend Request All",
