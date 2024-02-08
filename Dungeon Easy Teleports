@@ -1,671 +1,200 @@
-repeat wait() until game:IsLoaded()  -- anti afk
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
-    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-end)
+wait(3)
 
-local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
-local win = DiscordLib:Window("ASX GRAM HUB https://discord.gg/FAPCdbW9q6 discord: grammerscripting")
-
-local serv = win:Server("Anime Souls X", "")
-local DefenseChannel = serv:Channel("Defense Mode")
-local DungeonChannel = serv:Channel("Dungeon Mode")
-local AutoRotationChannel = serv:Channel("Auto Rotations")
-local AlienInvasionChannel = serv:Channel("Alien Invasion")
-local MiscellanousChannel = serv:Channel("Miscellanous")
-local SecretBossesChannel = serv:Channel("Secret Bosses")
-local InformationChannel = serv:Channel("Info")
-
-local serv2 = win:Server("PRIVATE OFFER", "http://www.roblox.com/asset/?id=8932053668")
-local SecretChannel = serv2:Channel("Roll Any Secret")
-SecretChannel:Label("This script can get you any secret in the game")
-SecretChannel:Label("If you want to buy this, message owner")
-SecretChannel:Label("Easy leaderboard management")
-SecretChannel:Label("Trying to keep this as private as possible")
-SecretChannel:Label("So the price won't be cheap")
-
-
-
--- VALUES
-_G.InstantAvatarSpin = true
-_G.SpinOPCrateKey = true
-_G.CollectDailyRewards = true
-_G.AutoFriendRequestAll = true
-
-_G.LoopKillDefenseMobs = true
-_G.LoopTeleportToDefenseMiddle = true
-_G.LoopStartDefense = true
-
-
-
--- Functions
-
-function InstantAvatarSpin()
-    while _G.InstantAvatarSpin == true do
-        wait(0.1)
-        local args = {
+local args = {
+    [1] = {
         [1] = {
-            [1] = {
-                [1] = "\3",
-                [2] = "Avatars",
-                [3] = "Spin"
-            }
+            [1] = "\3",
+            [2] = "Dungeon",
+            [3] = "Join",
+            [4] = "Medium"
         }
     }
-    
-    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+wait(65)
+
+
+
+
+local teleport_table = {
+    location1 = Vector3.new(-0.2849239110946655, 10491.5634765625, -5706.806640625),
+    location2 = Vector3.new(-0.45892491936683655, 10491.5634765625, -5589.58837890625),
+    location3 = Vector3.new(1.0156155824661255, 10491.5634765625, -5480.18994140625),
+    location4 = Vector3.new(0.13083653151988983, 10491.5634765625, -5363.28955078125),
+    location5 = Vector3.new(2.0006840229034424, 10491.5634765625, -5246.462890625), -- room 6
+    location6 = Vector3.new(0.08276493847370148, 10491.5634765625, -5133.0654296875),
+    location7 = Vector3.new(0.16811759769916534, 10491.5634765625, -5016.66748046875 ), -- room 8
+    location8 = Vector3.new(0.2891933023929596, 10491.5634765625, -4902.89404296875),
+    location9 = Vector3.new(-0.6041605472564697, 10491.5634765625, -4785.66259765625),
+    location11 = Vector3.new(-1.0689730644226074, 10491.5634765625, -4671.43701171875),
+    location12 = Vector3.new(0.09027722477912903, 10491.5634765625, -4557.6123046875),
+    location13 = Vector3.new(1.0290918350219727, 10491.5634765625, -4439.95166015625),
+    location14 = Vector3.new(-1.220860242843628, 10491.5634765625, -4325.451171875), -- room 14
+    location15 = Vector3.new(0.36301499605178833, 10491.5634765625, -4213.07861328125),
+    location16 = Vector3.new(1.4655920267105103, 10491.5634765625, -4097.19921875), -- room 16
+    location17 = Vector3.new(0.19800379872322083, 10491.5634765625, -3983.75390625), -- room 17
+    location18 = Vector3.new(1.0587966442108154, 10491.5634765625, -3869.965087890625), -- room 18
+    location19 = Vector3.new(1.7364795207977295, 10491.564453125, -3753.919921875),
+    location20 = Vector3.new(0.8043844699859619, 10491.56640625, -3638.5546875), -- room 20
+    location21 = Vector3.new(1.147101879119873, 10491.5625, -3522.260986328125),
+    location22 = Vector3.new(-0.19849634170532227, 10491.5634765625, -3407.36962890625), -- room 22
+    location23 = Vector3.new(-0.2894577383995056, 10491.5634765625, -3293.619873046875), -- room 23
+    location24 = Vector3.new(-1.6562891006469727, 10491.5634765625, -3174.518310546875),
+    location25 = Vector3.new(-0.6657034754753113, 10491.5634765625, -3062.892578125), -- room 25
+    location26 = Vector3.new(1.1605291366577148, 10491.5634765625, -2946.778564453125),
+    location27 = Vector3.new(2.0145726203918457, 10491.5634765625, -2832.71240234375), -- room 27
+    location28 = Vector3.new(-0.11653157323598862, 10491.5634765625, -2716.8828125), -- room 28
+    location29 = Vector3.new(0.5581159591674805, 10491.5634765625, -2598.4072265625), -- room 29
+    location30 = Vector3.new(1.136346459388733, 10491.5634765625, -2487.115234375), -- room 30
+    location31 = Vector3.new(1.769910454750061, 10491.5634765625, -2372.168212890625), -- room 31
+    location32 = Vector3.new(-0.18867722153663635, 10491.5634765625, -2258.03076171875),
+    location33 = Vector3.new(-0.5878490209579468, 10491.5634765625, -2143.12841796875),
+    location34 = Vector3.new(0.45503151416778564, 10491.5634765625, -2028.8443603515625),
+    location35 = Vector3.new(0.6305772066116333, 10491.5634765625, -1914.390869140625), -- room 35
+    location36 = Vector3.new(0.19951581954956055, 10491.5634765625, -1794.285888671875), -- room 36
+    location37 = Vector3.new(0.19746720790863037, 10491.5634765625, -1683.2816162109375), -- room 37
+    location38 = Vector3.new(0.5389406681060791, 10491.5654296875, -1569.1002197265625),
+    location39 = Vector3.new(0.5441926717758179, 10491.5634765625, -1453.4918212890625),
+    location40 = Vector3.new(0.5746784210205078, 10491.5634765625, -1336.9674072265625), -- room 40
+    location41 = Vector3.new(0.5923266410827637, 10491.5634765625, -1223.697021484375),
+    location42 = Vector3.new(0.6096343994140625, 10491.5634765625, -1108.4881591796875),
+    location43 = Vector3.new(0.6193698048591614, 10491.5634765625, -994.0711669921875),
+    location44 = Vector3.new(0.6436657905578613, 10491.5634765625, -879.4609375),
+    location45 = Vector3.new(0.6684978008270264, 10491.5634765625, -762.8460693359375),
+    location46 = Vector3.new(0.6939218044281006, 10491.5634765625, -649.9827270507812),
+    location47 = Vector3.new(0.7095264196395874, 10491.5634765625, -530.6099243164062),
+    location48 = Vector3.new(0.7282764911651611, 10491.5634765625, -416.0601806640625),
+    location49 = Vector3.new(0.7309231758117676, 10491.5634765625, -303.5557556152344), -- room 49
+    location50 = Vector3.new(0.748085618019104, 10491.5634765625, -189.2962646484375), -- room 50 (actually 1 room before)
+    location51 = Vector3.new(-1.5706361532211304, 10491.568359375, -73.24430084228516) -- room 50 (i was copy pasting coordinates after the room was cleared)
+}
+
+local tween_s = game:GetService('TweenService')
+local tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Linear)
+
+local lp = game.Players.LocalPlayer
+
+function bypass_teleport(v)
+    if lp.Character and lp.Character:FindFirstChild('HumanoidRootPart') then
+        local cf = CFrame.new(v)
+        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo, { CFrame = cf })
+        a:Play()
     end
 end
 
-function SpinOPCrateKey()
-    while _G.SpinOPCrateKey == true do
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "OPCrate",
-                    [3] = "Spin"
-                }
-            }
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-        wait(1)
-    end
-end
-
-function CollectDailyRewards()
-    while _G.CollectDailyRewards == true do
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "1"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "2"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "3"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "4"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "5"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "6"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "7"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Claim",
-                    [4] = "8"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        local args = {
-            [1] = {
-                [1] = {
-                    [1] = "\3",
-                    [2] = "DailyRewards",
-                    [3] = "Reset"
-                }
-            }
-        }
-        wait(3)
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-
-        wait(600)
-    end
-end
+bypass_teleport(teleport_table.location1)
+wait(6)
+bypass_teleport(teleport_table.location2)
+wait(6)
+bypass_teleport(teleport_table.location3)
+wait(6)
+bypass_teleport(teleport_table.location4)
+wait(6)
+bypass_teleport(teleport_table.location5)
+wait(6)
+bypass_teleport(teleport_table.location6)
+wait(6)
+bypass_teleport(teleport_table.location7)
+wait(6)
+bypass_teleport(teleport_table.location8)
+wait(6)
+bypass_teleport(teleport_table.location9)
+wait(6)
+bypass_teleport(teleport_table.location11)
+wait(6)
+bypass_teleport(teleport_table.location12)
+wait(6)
+bypass_teleport(teleport_table.location13)
+wait(6)
+bypass_teleport(teleport_table.location14)
+wait(6)
+bypass_teleport(teleport_table.location15)
+wait(6)
+bypass_teleport(teleport_table.location16)
+wait(6)
+bypass_teleport(teleport_table.location17)
+wait(6)
+bypass_teleport(teleport_table.location18) 
+wait(6)
+bypass_teleport(teleport_table.location19) 
+wait(6)
+bypass_teleport(teleport_table.location20) 
+wait(6)
+bypass_teleport(teleport_table.location21) 
+wait(6)
+bypass_teleport(teleport_table.location22) 
+wait(6)
+bypass_teleport(teleport_table.location23) 
+wait(6)
+bypass_teleport(teleport_table.location24) 
+wait(6)
+bypass_teleport(teleport_table.location25) 
+wait(6)
+bypass_teleport(teleport_table.location26) 
+wait(6)
+bypass_teleport(teleport_table.location27) 
+wait(6)
+bypass_teleport(teleport_table.location28) 
+wait(6)
+bypass_teleport(teleport_table.location29) 
+wait(6)
+bypass_teleport(teleport_table.location30) 
+wait(6)
+bypass_teleport(teleport_table.location31) 
+wait(6)
+bypass_teleport(teleport_table.location32)
+wait(6)
+bypass_teleport(teleport_table.location33)
+wait(6)
+bypass_teleport(teleport_table.location34) 
+wait(6)
+bypass_teleport(teleport_table.location35) 
+wait(6)
+bypass_teleport(teleport_table.location36) 
+wait(6)
+bypass_teleport(teleport_table.location37) 
+wait(6)
+bypass_teleport(teleport_table.location38) 
+wait(6)
+bypass_teleport(teleport_table.location39) 
+wait(6)
+bypass_teleport(teleport_table.location40)
+wait(6)
+bypass_teleport(teleport_table.location41) 
+wait(6)
+bypass_teleport(teleport_table.location42) 
+wait(6)
+bypass_teleport(teleport_table.location43) 
+wait(6)
+bypass_teleport(teleport_table.location44) 
+wait(6)
+bypass_teleport(teleport_table.location45)
+wait(6)
+bypass_teleport(teleport_table.location46) 
+wait(6)
+bypass_teleport(teleport_table.location47) 
+wait(6)
+bypass_teleport(teleport_table.location48) 
+wait(6)
+bypass_teleport(teleport_table.location49) 
+wait(6)
+bypass_teleport(teleport_table.location50)
+wait(6)
+bypass_teleport(teleport_table.location51) 
 
 
+wait(10)
 
-function LoopKillDefenseMobs()
-    while _G.LoopKillDefenseMobs == true do
-        task.wait(0.25)
-        local Plr = game.Players.LocalPlayer
-        
-        local Enemn = nil
-        
-        local ClostDist = 280
-        
-        for _, v in pairs(workspace._ENEMIES.Defense:GetChildren()) do
-            
-            if v:FindFirstChild("HumanoidRootPart") then
-                
-                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
-                
-                if DistCryst < ClostDist then
-                    
-                    ClostDist = DistCryst
-                    Enemn = v
-                    
-                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
-                    
-                    local VirtualUser = game:GetService("VirtualUser")
-                    local function DoClicks(x, y)
-                        VirtualUser:CaptureController()
-                        VirtualUser:Button1Down(Vector2.new(x,y))
-                        task.wait(0.0001)
-                        VirtualUser:Button1Up(Vector2.new(x, y))
-                    end
-                    DoClicks(250, 250)
-                    break;
-                end
-            end
-        end
-    end
-end
-
-function LoopTeleportToDefenseMiddle()
-    while _G.LoopTeleportToDefenseMiddle == true do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
-        wait(5)
-    end
-end
-
-function LoopStartDefense()
-    while _G.LoopStartDefense == true do
-        wait(30)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
-
-    if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
-
-    firesignal(game:GetService("Players").LocalPlayer.PlayerGui._CENTER.Defense.Content.Public.MouseButton1Click)
-
-    task.wait(0.96)
-
-    local args = {
+local args = {
+    [1] = {
         [1] = {
-            [1] = {
-               [1] = "\3",
-               [2] = "Defense",
-               [3] = "Join"
-           }
-       }
-    }
-
-    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-    end
-    end
-end
-
-function AutoFriendRequestAll()
-    while _G.AutoFriendRequestAll == true do
-        local plrs = game:GetService('Players')
-            for i,v in pairs(plrs:GetChildren()) do
-                wait(1)
-            plrs.LocalPlayer:RequestFriendship(v)
-        end
-    end
-end
-
-
-
-
--- GUI
-
-DungeonChannel:Label("So far everything is in auto rotations")
-DungeonChannel:Label("might add independent functions here")
-
-DefenseChannel:Button("Remove Crystal", function()
-    game:GetService("Workspace")["_AREAS"].Defense.ManaCrystal:Destroy()
-end)
-
-DefenseChannel:Button("Teleport to & Start Defense", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace._AREAS.Defense.Portal.WorldPivot
-
-    if game:GetService("Players").LocalPlayer.PlayerGui.Mode.Content.Defense.Info.Defense.Visible then
-
-    firesignal(game:GetService("Players").LocalPlayer.PlayerGui._CENTER.Defense.Content.Public.MouseButton1Click)
-
-    task.wait(0.96)
-
-    local args = {
-        [1] = {
-            [1] = {
-               [1] = "\3",
-               [2] = "Defense",
-               [3] = "Join"
-           }
-       }
-    }
-
-    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-    end
-end)
-
-DefenseChannel:Button("Teleport back (in case you get flung out)", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(230.36766052246094, 1071.6051025390625, 4613.86474609375)
-end)
-
-DefenseChannel:Label("Autofarming Section:")
-
-DefenseChannel:Toggle(
-    "Loop Kill Defense Mobs",
-    false,
-    function(bool)
-        _G.LoopKillDefenseMobs = bool
-        LoopKillDefenseMobs()
-    end
-)
-
-DefenseChannel:Toggle(
-    "Teleport To The Middle LOOP (remove crystal first)",
-    false,
-    function(bool)
-        _G.LoopTeleportToDefenseMiddle = bool
-        LoopTeleportToDefenseMiddle()
-    end
-)
-
-DefenseChannel:Toggle(
-    "Loop Start Defense",
-    false,
-    function(bool)
-        _G.LoopStartDefense = bool
-        LoopStartDefense()
-    end
-)
-
-
-
-AlienInvasionChannel:Button("Enter Alien Invasion", function()
-    local args = {
-        [1] = {
-            [1] = {
-                [1] = "\3",
-                [2] = "AlienInvasion",
-                [3] = "Join"
-            }
+            [1] = "\3",
+            [2] = "Dungeon",
+            [3] = "Leave"
         }
     }
-    
-    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
+}
 
-AlienInvasionChannel:Button("Teleport To The Center (Boss)", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13565.68359375, 5980.34033203125, 198.92274475097656)
-end)
-
-AlienInvasionChannel:Button("Loop Kill Alien Invasion Once You're close", function()
-    while true do
-        task.wait(0.25)
-        local Plr = game.Players.LocalPlayer
-        
-        local Enemn = nil
-        
-        local ClostDist = 280
-        
-        for _, v in pairs(workspace._ENEMIES.AlienInvasion:GetChildren()) do
-            
-            if v:FindFirstChild("HumanoidRootPart") then
-                
-                local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
-                
-                if DistCryst < ClostDist then
-                    
-                    ClostDist = DistCryst
-                    Enemn = v
-                    
-                    Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
-                    
-                    local VirtualUser = game:GetService("VirtualUser")
-                    local function DoClicks(x, y)
-                        VirtualUser:CaptureController()
-                        VirtualUser:Button1Down(Vector2.new(x,y))
-                        task.wait(0.0001)
-                        VirtualUser:Button1Up(Vector2.new(x, y))
-                    end
-                    DoClicks(250, 250)
-                    break;
-                end
-            end
-        end
-    end
-end)
-
-
-
-
-MiscellanousChannel:Button("Position Finder", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/PositionFinder", true))()
-end)
-
-MiscellanousChannel:Button("Press to auto claim ship rewards every 30 mins", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 30 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/ShipRewards", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-MiscellanousChannel:Button("Fast Mode", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Fast%20Mode", true))()
-end)
-
-MiscellanousChannel:Slider("Walkspeed", 0, 300, 25, function(t)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
-end)
-
-
-
-MiscellanousChannel:Toggle(
-    "Auto Friend Request All",
-    false,
-    function(bool)
-        _G.AutoFriendRequestAll = bool
-        AutoFriendRequestAll()
-    end
-)
-
-MiscellanousChannel:Toggle(
-    "Instant Avatar Spin",
-    false,
-    function(bool)
-        _G.InstantAvatarSpin = bool
-        InstantAvatarSpin()
-    end
-)
-
-MiscellanousChannel:Toggle(
-    "Spin OP Crate Key",
-    false,
-    function(bool)
-        _G.SpinOPCrateKey = bool
-        SpinOPCrateKey()
-    end
-)
-
-MiscellanousChannel:Toggle(
-    "Auto Collect Daily Rewards (checks every 3 seconds)",
-    false,
-    function(bool)
-        _G.CollectDailyRewards = bool
-        CollectDailyRewards()
-    end
-)
-
-
-
-
-
-AutoRotationChannel:Button("Auto Easy Dungeon :00", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 00 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Easy%20Teleports", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Button("Auto Easy Dungeon :30", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 30 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Easy%20Teleports", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Button("Alien Invasion :39", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 39 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Alien%20Invasion", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Button("Auto Medium Dungeon :15", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 15 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Medium%20Teleports", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Button("Auto Medium Dungeon :45", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 45 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Medium%20Teleports", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Label("Raids depend on when the server started, occur every 30 mins.")
-AutoRotationChannel:Label("Enable which option applies or select all of them.")
-
-AutoRotationChannel:Button("Auto Raids :09", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 09 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Button("Auto Raids :23", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 23 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-AutoRotationChannel:Button("Auto Raids :53", function()
-    local function checkTime()
-        local currentTime = os.date("*t", os.time())
-        if currentTime.min == 53 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/MAINMINECRAFTONEPIECE/main/Auto%20Raid", true))()
-        end
-    end
-    
-    while true do
-        wait(5) -- Wait for 60 seconds
-        checkTime() -- Check the time
-    end
-end)
-
-
-
-
-
-
-SecretBossesChannel:Button("Loop Through All (should be in their map, might bug)", function()
-    task.wait(0.25)
-    local Plr = game.Players.LocalPlayer
-    
-    local Enemn = nil
-    
-    local ClostDist = 10000000000000000
-    
-    for _, v in pairs(workspace._ENEMIES.SecretBosses:GetChildren()) do
-        
-        if v:FindFirstChild("HumanoidRootPart") then
-            
-            local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
-            
-            if DistCryst < ClostDist then
-                
-                ClostDist = DistCryst
-                Enemn = v
-                
-                Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
-                
-                local VirtualUser = game:GetService("VirtualUser")
-                local function DoClicks(x, y)
-                    VirtualUser:CaptureController()
-                    VirtualUser:Button1Down(Vector2.new(x,y))
-                    task.wait(0.0001)
-                    VirtualUser:Button1Up(Vector2.new(x, y))
-                end
-                DoClicks(250, 250)
-                break;
-            end
-        end
-    end
-end)
-SecretBossesChannel:Button("Cursed Zone", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(567.4405517578125, 22.376876831054688, -166.1839141845703)
-end)
-SecretBossesChannel:Button("Bizarre Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(302.6838684082031, 22.174760818481445, -332.15423583984375)
-end)
-SecretBossesChannel:Button("Ninja Village", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-82.08238220214844, 17.562477111816406, -309.6497802734375)
-end)
-SecretBossesChannel:Button("Hunter Zone", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-315.27850341796875, 21.585254669189453, -147.81068420410156)
-end)
-SecretBossesChannel:Button("Spirit Society", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-744.5907592773438, 50.593597412109375, 35.02621841430664)
-end)
-SecretBossesChannel:Button("Dragon City", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1107.502685546875, 21.05242156982422, -182.0968780517578)
-end)
-SecretBossesChannel:Button("Ghoul Town", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1286.8802490234375, 21.65215492248535, 59.17391586303711)
-end)
-SecretBossesChannel:Button("Marine Station", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1852.821044921875, 21.56102752685547, 117.8427734375)
-end)
-SecretBossesChannel:Button("Leveling City", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1945.238037109375, 21.108051300048828, 38.31850814819336)
-end)
-SecretBossesChannel:Button("Titan District", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2657.18017578125, 16.234107971191406, 33.9995002746582)
-end)
-
-
-InformationChannel:Label("The titan range i used for dungeons was 45, anything higher will work.")
-InformationChannel:Label("I recommend disabling avatar skill")
-
-
-
-
-
-
-
-
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
