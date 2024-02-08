@@ -36,6 +36,8 @@ _G.LoopKillDefenseMobs = true
 _G.LoopTeleportToDefenseMiddle = true
 _G.LoopStartDefense = true
 
+_G.AutoEasyMode = true
+
 
 -- Functions
 
@@ -294,6 +296,22 @@ function NoCollision()
     end
 end
 
+
+function AutoEasyMode()
+    while _G.AutoEasyMode == true do
+        local function checkTime()
+            local currentTime = os.date("*t", os.time())
+            if currentTime.min == 00 then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Dungeon%20Easy%20Teleports", true))()
+            end
+        end
+        
+        while true do
+            wait(5) -- Wait for 60 seconds
+            checkTime() -- Check the time
+        end
+    end
+end
 
 -- GUI
 
@@ -610,6 +628,18 @@ AutoRotationChannel:Button("Auto Raids :53", function()
         checkTime() -- Check the time
     end
 end)
+
+
+AutoRotationChannel:Toggle(
+    "Auto Rotation Easy Dungeon :00",
+    false,
+    function(bool)
+        _G.AutoEasyMode = bool
+        AutoEasyMode()
+    end
+)
+
+
 
 
 
