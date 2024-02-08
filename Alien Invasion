@@ -1,7 +1,7 @@
 
 
 
-wait(5)
+wait(15)
 
 
 local args = {
