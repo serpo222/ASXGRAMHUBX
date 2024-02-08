@@ -1,7 +1,7 @@
 
 
 
-wait(15)
+wait(7)
 
 
 local args = {
@@ -65,7 +65,7 @@ while true do
     end
 end
 
-wait(300)
+wait(200)
 
 local args = {
     [1] = {
