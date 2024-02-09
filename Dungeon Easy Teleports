@@ -185,7 +185,7 @@ wait(4.5)
 bypass_teleport(teleport_table.location51) 
 
 
-wait(5)
+wait(3)
 
 local args = {
     [1] = {
