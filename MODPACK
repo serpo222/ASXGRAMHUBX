@@ -23,19 +23,6 @@ SecretChannel:Label("Easy leaderboard management")
 SecretChannel:Label("Trying to keep this as private as possible")
 SecretChannel:Label("So the price won't be cheap")
 
-local UserInputService = game:GetService("UserInputService")
-
-local keybind = Enum.KeyCode.E
-
-local function onKeyPressed(input)
-    if input.KeyCode == keybind then
-        DiscordLib.Visible = false
-        win.Visible = false
-        serv.Visible = false
-    end
-end
-
-UserInputService.InputBegan:Connect(onKeyPressed)
 
 -- VALUES
 _G.InstantAvatarSpin = true
