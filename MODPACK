@@ -29,7 +29,9 @@ local keybind = Enum.KeyCode.E
 
 local function onKeyPressed(input)
     if input.KeyCode == keybind then
+        DiscordLib.Visible = false
         win.Visible = false
+        serv.Visible = false
     end
 end
 
