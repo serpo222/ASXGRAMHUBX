@@ -31,7 +31,7 @@ local teleport_table = {
     location14 = Vector3.new(1001.516845703125, 10491.564453125, -4440.61083984375),
     location15 = Vector3.new(1000.3505249023438, 10491.5625, -4327.51904296875),
     location16 = Vector3.new(1000.238525390625, 10491.564453125, -4211.8544921875),
-    location17 = Vector3.new(1001.7850952148438, 10491.5625, -4097.50927734375) 
+    location17 = Vector3.new(1001.7850952148438, 10491.5625, -4097.50927734375) -- room 16
 }
 
 local tween_s = game:GetService('TweenService')
