@@ -505,7 +505,83 @@ AutoRotationChannel:Button("Alien Invasion :39", function()
     local function checkTime()
         local currentTime = os.date("*t", os.time())
         if currentTime.min == 39 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Alien%20Invasion", true))()
+            wait(5)
+
+
+        local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "AlienInvasion",
+            [3] = "Join"
+        }
+    }
+        }
+
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+
+
+        wait(5)
+
+
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13565.68359375, 5980.34033203125, 198.92274475097656)
+
+        wait(1)
+
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13565.68359375, 5980.34033203125, 198.92274475097656)
+
+
+
+
+        while true do
+    task.wait(0.25)
+    local Plr = game.Players.LocalPlayer
+    
+    local Enemn = nil
+    
+    local ClostDist = 280
+    
+    for _, v in pairs(workspace._ENEMIES.AlienInvasion:GetChildren()) do
+        
+        if v:FindFirstChild("HumanoidRootPart") then
+            
+            local DistCryst = (v.HumanoidRootPart.Position - Plr.Character.HumanoidRootPart.Position).Magnitude
+            
+            if DistCryst < ClostDist then
+                
+                ClostDist = DistCryst
+                Enemn = v
+                
+                Plr.Character.HumanoidRootPart.CFrame = Enemn.HumanoidRootPart.CFrame * CFrame.new(0.25,0,0)
+                
+                local VirtualUser = game:GetService("VirtualUser")
+                local function DoClicks(x, y)
+                    VirtualUser:CaptureController()
+                    VirtualUser:Button1Down(Vector2.new(x,y))
+                    task.wait(0.0001)
+                    VirtualUser:Button1Up(Vector2.new(x, y))
+                end
+                DoClicks(250, 250)
+                break;
+            end
+        end
+    end
+        end
+
+        wait(180)
+
+        local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "AlienInvasion",
+            [3] = "Leave"
+        }
+    }
+        }       
+
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
         end
     end
     
@@ -661,6 +737,7 @@ end)
 
 InformationChannel:Label("The titan range i used for dungeons was 45, anything higher will work.")
 InformationChannel:Label("I recommend disabling avatar skill")
+InformationChannel:Label("I also recommend not being on a mount whenever autofarming if you have issues.")
 
 
 
