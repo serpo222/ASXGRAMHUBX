@@ -37,7 +37,7 @@ _G.LoopStartDefense = true
 
 _G.LoopBuyFruitWithGold = true
 
-_G.EnableOrDisable3Drendering = true
+
 
 
 
@@ -299,13 +299,6 @@ function LoopBuyFruitWithGold()
     end
 end
 
-function EnableOrDisable3Drendering()
-    while _G.EnableOrDisable3Drendering == true do
-        game:GetService("RunService"):Set3dRenderingEnabled(false)
-        wait(0.25)
-    end
-end
-
 
 
 -- GUI
@@ -464,6 +457,17 @@ MiscellanousChannel:Button("Fast Mode", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/serpo222/ASXGRAMHUBX/main/Fast%20Mode", true))()
 end)
 
+MiscellanousChannel:Button("Enable 3D Rendering", function()
+    game:GetService("RunService"):Set3dRenderingEnabled(true)
+end)
+
+MiscellanousChannel:Button("Disable 3D Rendering", function()
+    game:GetService("RunService"):Set3dRenderingEnabled(false)
+end)
+
+
+
+
 MiscellanousChannel:Slider("Walkspeed", 0, 300, 25, function(t)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
 end)
@@ -505,14 +509,6 @@ MiscellanousChannel:Toggle(
     end
 )
 
-MiscellanousChannel:Toggle(
-    "Disable Or Enable 3D rendering (saves pc resources)",
-    false,
-    function(bool)
-        _G.EnableOrDisable3Drendering = bool
-        EnableOrDisable3Drendering()
-    end
-)
 
 
 
