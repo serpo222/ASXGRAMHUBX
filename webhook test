@@ -1,0 +1,18 @@
+local webhookUrl = "https://discord.com/api/webhooks/1207295364458356747/atu9wXk5Oy_75TGkAifUbyoa60ErDcEl1kfaUnccT5lhgNmMw0Y2ztsQZ1hxfcoERBsV"
+local HttpService = game:GetService("HttpService")
+
+-- Function to send a message to Discord webhook
+local function sendToDiscord(message)
+    local payload = {
+        content = message
+    }
+    local success, response = pcall(function()
+        return HttpService:PostAsync(webhookUrl, HttpService:JSONEncode(payload), Enum.HttpContentType.ApplicationJson)
+    end)
+    if not success then
+        warn("Failed to send message to Discord:", response)
+    end
+end
+
+-- Send a message to Discord
+sendToDiscord("Hello from Roblox!")
