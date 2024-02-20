@@ -1,7 +1,12 @@
-local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
-local win = DiscordLib:Window("gpo opener by grammerscripting on discord")
+repeat wait() until game:IsLoaded()  -- anti afk
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
 
-local serv = win:Server("gpo hub opener", "")
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local win = DiscordLib:Window("ASX GRAM HUB https://discord.gg/FAPCdbW9q6 discord: grammerscripting")
+
+local serv = win:Server("GPO HUB OPENER", "")
 local MainChannel = serv:Channel("Main")
 
 _G.LoopToolEsp = true
@@ -104,7 +109,7 @@ end
 
 
 
-MainChannell:Button("Hitbox Expander", function()
+MainChannel:Button("Hitbox Expander", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
 end)
 
