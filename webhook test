@@ -121,7 +121,7 @@ end)
 
 
 MainChannel:Toggle(
-    "Loop Tool Esp,
+    "Loop Tool Esp",
     false,
     function(bool)
         _G.LoopToolEsp = bool
