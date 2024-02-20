@@ -124,7 +124,7 @@ MainChannel:Toggle(
     "Loop Tool Esp,
     false,
     function(bool)
-        _G.LoopKillDefenseMobs = bool
-        LoopKillDefenseMobs()
+        _G.LoopToolEsp = bool
+        LoopToolEsp()
     end
 )
