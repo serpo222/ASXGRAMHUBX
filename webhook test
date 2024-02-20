@@ -1,18 +1,125 @@
-local webhookUrl = "https://discord.com/api/webhooks/1207295364458356747/atu9wXk5Oy_75TGkAifUbyoa60ErDcEl1kfaUnccT5lhgNmMw0Y2ztsQZ1hxfcoERBsV"
-local HttpService = game:GetService("HttpService")
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local win = DiscordLib:Window("gpo opener by grammerscripting on discord")
 
--- Function to send a message to Discord webhook
-local function sendToDiscord(message)
-    local payload = {
-        content = message
-    }
-    local success, response = pcall(function()
-        return HttpService:PostAsync(webhookUrl, HttpService:JSONEncode(payload), Enum.HttpContentType.ApplicationJson)
-    end)
-    if not success then
-        warn("Failed to send message to Discord:", response)
+local serv = win:Server("gpo hub opener", "")
+local MainChannel = serv:Channel("Main")
+
+_G.LoopToolEsp = true
+
+
+function LoopToolEsp()
+    while _G.LoopToolEsp == true do
+        wait(0.25)
+        -- tools in the game
+        local tools = game.Workspace
+
+        -- like an esp (Extra Sensory Perception)
+        local esp = Instance.new("Highlight")
+
+        -- billboard to display name
+        local bbg = Instance.new("BillboardGui")
+
+        -- configs for the BillboardGui
+            bbg.AlwaysOnTop = true
+        bbg.Size = UDim2.new(0, 100, 0, 30)
+        bbg.StudsOffset = Vector3.new(0, 2, 0)
+
+        -- table to store highlighted tools
+        local highlightedTools = {}
+
+        -- function to highlight tools
+        function highlightTool(item)
+    if item:IsA("Tool") then
+        -- check if the tool has a BoolValue named "HighlightTool"
+        local highlightTool = item:FindFirstChild("HighlightTool")
+        if not highlightTool then
+            highlightTool = Instance.new("BoolValue")
+            highlightTool.Name = "HighlightTool"
+            highlightTool.Parent = item
+        end
+
+        -- ignore if the tool is already highlighted
+        if highlightTool.Value then
+            return
+        end
+
+        -- clone the Highlight instance and BillboardGui
+        local copy = esp:Clone()
+        copy.Parent = item
+        local copy2 = bbg:Clone()
+        copy2.Parent = item
+
+        -- create a text label for the tool name
+        local text = Instance.new("TextLabel", copy2)
+        text.Size = bbg.Size
+        text.TextSize = 15
+        text.BackgroundTransparency = 1
+        text.Text = item.Name
+
+        -- mark the tool as highlighted
+        highlightedTools[item] = true
+
+        -- set the bool to true
+        highlightTool.Value = true
+
+        -- search for other tools with the same name and HighlightTool value of false
+        for _, tool in ipairs(workspace:GetChildren()) do
+            if tool:IsA("Tool") and tool.Name == item.Name and tool ~= item then
+                local otherHighlightTool = tool:FindFirstChild("HighlightTool")
+                if otherHighlightTool and otherHighlightTool:IsA("BoolValue") and not otherHighlightTool.Value then
+                    -- move the highlight to the other tool
+                    for _, child in ipairs(item:GetChildren()) do
+                        if child.Name == "Highlight" or child.Name == "BillboardGui" then
+                            child.Parent = tool
+                        end
+                    end
+                    -- update the HighlightTool value
+                    otherHighlightTool.Value = true
+                    highlightTool.Value = false
+                    break
+                end
+            end
+        end
+    end
+        end
+
+        -- ChildAdded event
+        workspace.ChildAdded:Connect(function(child)
+    if child:IsA("Tool") and not highlightedTools[child] then
+        highlightTool(child)
+    end
+        end)
+
+        -- function to search for tools in the workspace
+        function search()
+    for _, item in pairs(tools:GetDescendants()) do
+        highlightTool(item)
+    end
+        end
+
+        -- connect to the Heartbeat event to search for tools
+        game:GetService("RunService").Heartbeat:Connect(search)
     end
 end
 
--- Send a message to Discord
-sendToDiscord("Hello from Roblox!")
+
+
+MainChannell:Button("Hitbox Expander", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
+end)
+
+
+
+MainChannel:Button("Player Esp", function()
+    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+end)
+
+
+MainChannel:Toggle(
+    "Loop Tool Esp,
+    false,
+    function(bool)
+        _G.LoopKillDefenseMobs = bool
+        LoopKillDefenseMobs()
+    end
+)
