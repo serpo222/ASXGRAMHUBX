@@ -143,6 +143,7 @@ MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
 end)
 
 
+
 MainChannel:Button("Press me to activate Increase jump power by 20%", function()
     local player = game.Players.LocalPlayer
         local character = player.Character or player.CharacterAdded:Wait()
@@ -159,25 +160,6 @@ MainChannel:Button("Press me to activate Increase jump power by 20%", function()
         end
 end)
 
-MainChannel:Button("Remove fog", function()
-    local Lighting = game:GetService("Lighting")
-
-        Lighting.FogEnd = 100000
-
-        Lighting:GetPropertyChangedSignal("FogEnd"):Connect(function()
-    Lighting.FogEnd = 100000
-        end)
-
-        for _,v in ipairs(Lighting:GetDescendants()) do
-    if v:IsA("Atmosphere") then
-        v.Density = 0
-
-        v:GetPropertyChangedSignal("Density"):Connect(function()
-            v.Density = 0
-        end)
-    end
-        end
-end)
 
 
 
