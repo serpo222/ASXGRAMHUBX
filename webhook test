@@ -142,27 +142,6 @@ MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
         end)
 end)
 
-MainChannel:Button("Hold down 9 run fast NO HEALTH CAP", function()
-    repeat wait() until game.Players.LocalPlayer
-
-        local player = game.Players.LocalPlayer
-        local mouse = player:GetMouse()
-
-        mouse.KeyDown:Connect(function(key)
-    if key == "9" then
-            player.Character.Humanoid.WalkSpeed = 40
-        end
-    end
-        end)
-
-        mouse.KeyUp:Connect(function(key)
-    if key == "9" then
-        if player.Character then
-            player.Character.Humanoid.WalkSpeed = player.Character.Humanoid.WalkSpeed
-        end
-    end
-        end)
-end)
 
 MainChannel:Button("Press me to activate Increase jump power by 20%", function()
     local player = game.Players.LocalPlayer
