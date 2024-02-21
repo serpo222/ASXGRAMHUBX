@@ -122,19 +122,40 @@ end)
 MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
     repeat wait() until game.Players.LocalPlayer
 
-        evt = game.Players.LocalPlayer:GetMouse()
+        local player = game.Players.LocalPlayer
+        local mouse = player:GetMouse()
 
-        evt.KeyDown:connect(function(key)
-    if key == "0" then
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 35
+        mouse.KeyDown:Connect(function(key)
+    if key == "3" then
+        if player.Character and player.Character.Humanoid.Health > player.Character.Humanoid.MaxHealth * 0.36 then
+            player.Character.Humanoid.WalkSpeed = 40
+        end
     end
         end)
 
-        evt.KeyUp:connect(function(key)
-    if key == "0" then
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+        mouse.KeyUp:Connect(function(key)
+    if key == "3" then
+        if player.Character then
+            player.Character.Humanoid.WalkSpeed = player.Character.Humanoid.WalkSpeed
+        end
     end
         end)
+end)
+
+MainChannel:Button("Press me to activate Increase jump power by 20%", function()
+    local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+ 
+        local jumpPowerIncreasePercentage = 0.2 -- 20% increase
+ 
+        -- Check if the character exists and has a Humanoid
+        if character and character:IsA("Model") and character:FindFirstChildOfClass("Humanoid") then
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+ 
+    -- Increase jump power
+    local currentJumpPower = humanoid.JumpPower
+    humanoid.JumpPower = currentJumpPower * (1 + jumpPowerIncreasePercentage)
+        end
 end)
 
 
