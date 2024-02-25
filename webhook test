@@ -225,7 +225,7 @@ MainChannel:Button("Press Y to teleport 95 studs up", function()
     end)
 end)
 
-MainChannel:Button("Press O to teleport to top of water, function()
+MainChannel:Button("Press O to teleport to top of water", function()
     -- Locate the player's character
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
