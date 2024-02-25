@@ -117,10 +117,6 @@ end)
 
 
 
-MainChannel:Button("Player Esp", function()
-    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
-end)
-
 MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
     repeat wait() until game.Players.LocalPlayer
 
@@ -144,11 +140,11 @@ MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
         end)
 end)
 
-MainChannel:Button("Press me to activate Increase jump power to 60", function()
+MainChannel:Button("Press me to activate Increase jump power to 80", function()
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
 
-        local jumpPower = 62
+        local jumpPower = 80
         local originalJumpPower = character.Humanoid.JumpPower
 
         character.Humanoid:GetPropertyChangedSignal("Jump"):Connect(function()
@@ -162,8 +158,6 @@ MainChannel:Button("Press me to activate Increase jump power to 60", function()
     end
     end)
 end)
-
-
 
 MainChannel:Button("Remove fog", function()
     local Lighting = game:GetService("Lighting")
@@ -231,8 +225,6 @@ MainChannel:Button("Press Y to teleport 95 studs up", function()
     end)
 end)
 
-
-
 MainChannel:Button("Press O to teleport to top of water, function()
     -- Locate the player's character
     local player = game.Players.LocalPlayer
@@ -258,7 +250,9 @@ end)
 
 
 
-
+ExtraFeaturesChannel:Button("Player Esp", function()
+    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+end)
 
 ExtraFeaturesChannel:Toggle(
     "Loop Tool Esp",
