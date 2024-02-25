@@ -140,24 +140,7 @@ MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
         end)
 end)
 
-MainChannel:Button("Press me to activate Increase jump power to 80", function()
-    local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
 
-        local jumpPower = 80
-        local originalJumpPower = character.Humanoid.JumpPower
-
-        character.Humanoid:GetPropertyChangedSignal("Jump"):Connect(function()
-    if character.Humanoid:GetState() == Enum.HumanoidStateType.Jumping then
-        character.Humanoid.JumpPower = jumpPower
-    end
-    end)
-    character.Humanoid:GetPropertyChangedSignal("State"):Connect(function()
-    if character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
-        character.Humanoid.JumpPower = originalJumpPower
-    end
-    end)
-end)
 
 MainChannel:Button("Remove fog", function()
     local Lighting = game:GetService("Lighting")
@@ -206,9 +189,7 @@ end)
 
 
 
-ExtraFeaturesChannel:Button("Player Esp", function()
-    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
-end)
+
 
 ExtraFeaturesChannel:Toggle(
     "Loop Tool Esp",
