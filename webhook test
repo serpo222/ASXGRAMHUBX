@@ -144,23 +144,14 @@ MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
 end)
 
 MainChannel:Button("Press me to activate Increase jump power to 60", function()
+    -- Locate the player's character
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
 
-        local jumpPower = 62
-        local originalJumpPower = character.Humanoid.JumpPower
-
-        character.Humanoid:GetPropertyChangedSignal("Jump"):Connect(function()
-    if character.Humanoid:GetState() == Enum.HumanoidStateType.Jumping then
-        character.Humanoid.JumpPower = jumpPower
+-- Adjust the jump power
+    character.Humanoid.JumpPower = 65
     end
-end)
 
-character.Humanoid:GetPropertyChangedSignal("State"):Connect(function()
-    if character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
-        character.Humanoid.JumpPower = originalJumpPower
-    end
-end)
 end)
 
 
