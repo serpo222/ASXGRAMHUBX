@@ -155,12 +155,12 @@ MainChannel:Button("Press me to activate Increase jump power to 60", function()
     if character.Humanoid:GetState() == Enum.HumanoidStateType.Jumping then
         character.Humanoid.JumpPower = jumpPower
     end
-end)
+    end)
     character.Humanoid:GetPropertyChangedSignal("State"):Connect(function()
     if character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
         character.Humanoid.JumpPower = originalJumpPower
     end
-end)
+    end)
 end)
 
 
@@ -208,25 +208,27 @@ MainChannel:Button("Press L to teleport 12 studs up", function()
     end)
 end)
 
-MainChannel:Button("Press Y to teleport 85 studs up", function()
+
+
+MainChannel:Button("Press O to teleport to top of water, function()
     -- Locate the player's character
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local humanoid = character:WaitForChild("Humanoid")
 
-    -- Define the function to teleport the character
-    local function teleportUp()
-    local currentPosition = character:GetPrimaryPartCFrame().Position
-    local newPosition = currentPosition + Vector3.new(0, 85, 0) -- Teleport 10 studs above
+    -- Define the function to teleport vertically
+    local function teleportToY(yPosition)
+    local currentPosition = character.PrimaryPart.Position
+    local newPosition = Vector3.new(currentPosition.X, yPosition, currentPosition.Z)
 
     -- Teleport the character
     character:SetPrimaryPartCFrame(CFrame.new(newPosition))
     end
 
-        -- Connect the function to the 'R' key press event
+    -- Connect the function to the 'O' key press event
     game:GetService("UserInputService").InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.Y then
-        teleportUp()
+    if input.KeyCode == Enum.KeyCode.O then
+        teleportToY(8.902780532836914) -- Adjust 50 to your desired Y position
     end
     end)
 end)
