@@ -248,6 +248,35 @@ MainChannel:Button("Press O to teleport to top of water", function()
     end)
 end)
 
+MainChannel:Button("Press Left Alt to freeze/minimise", function()
+    -- Locate the player's character
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+
+        -- Track whether the character is currently anchored
+        local isAnchored = false
+
+        -- Define the function to toggle anchoring
+        local function toggleAnchoring()
+    -- Toggle the state of anchoring
+    isAnchored = not isAnchored
+    
+    -- Anchor or unanchor all parts of the character based on the current state
+    for _, part in ipairs(character:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.Anchored = isAnchored
+        end
+    end
+        end
+
+        -- Connect the function to the left alt key press event
+        game:GetService("UserInputService").InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftAlt then
+        toggleAnchoring() -- Toggle anchoring
+    end
+        end)
+end)
+
 
 
 ExtraFeaturesChannel:Button("Player Esp", function()
