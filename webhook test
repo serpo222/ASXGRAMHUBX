@@ -140,8 +140,6 @@ MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
         end)
 end)
 
-
-
 MainChannel:Button("Remove fog", function()
     local Lighting = game:GetService("Lighting")
 
@@ -185,11 +183,86 @@ MainChannel:Button("Press L to teleport 12 studs up", function()
     end)
 end)
 
+MainChannel:Button("Press Y to teleport 95 studs up", function()
+    -- Locate the player's character
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    -- Define the function to teleport the character
+    local function teleportUp()
+    local currentPosition = character:GetPrimaryPartCFrame().Position
+    local newPosition = currentPosition + Vector3.new(0, 95, 0) -- Teleport 10 studs above
+
+    -- Teleport the character
+    character:SetPrimaryPartCFrame(CFrame.new(newPosition))
+    end
+
+        -- Connect the function to the 'R' key press event
+    game:GetService("UserInputService").InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.Y then
+        teleportUp()
+    end
+    end)
+end)
+
+MainChannel:Button("Press O to teleport to top of water", function()
+    -- Locate the player's character
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    -- Define the function to teleport vertically
+    local function teleportToY(yPosition)
+    local currentPosition = character.PrimaryPart.Position
+    local newPosition = Vector3.new(currentPosition.X, yPosition, currentPosition.Z)
+
+    -- Teleport the character
+    character:SetPrimaryPartCFrame(CFrame.new(newPosition))
+    end
+
+    -- Connect the function to the 'O' key press event
+    game:GetService("UserInputService").InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.O then
+        teleportToY(8.902780532836914) -- Adjust 50 to your desired Y position
+    end
+    end)
+end)
+
+MainChannel:Button("Press Left Alt to freeze/minimise", function()
+    -- Locate the player's character
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+
+        -- Track whether the character is currently anchored
+        local isAnchored = false
+
+        -- Define the function to toggle anchoring
+        local function toggleAnchoring()
+    -- Toggle the state of anchoring
+    isAnchored = not isAnchored
+    
+    -- Anchor or unanchor all parts of the character based on the current state
+    for _, part in ipairs(character:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.Anchored = isAnchored
+        end
+    end
+        end
+
+        -- Connect the function to the left alt key press event
+        game:GetService("UserInputService").InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftAlt then
+        toggleAnchoring() -- Toggle anchoring
+    end
+        end)
+end)
 
 
 
-
-
+ExtraFeaturesChannel:Button("Player Esp", function()
+    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+end)
 
 ExtraFeaturesChannel:Toggle(
     "Loop Tool Esp",
