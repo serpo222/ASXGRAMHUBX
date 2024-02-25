@@ -9,7 +9,7 @@ local win = DiscordLib:Window("ASX GRAM HUB https://discord.gg/FAPCdbW9q6 discor
 local serv = win:Server("GPO HUB OPENER", "")
 local MainChannel = serv:Channel("Main")
 
-local serv2 = win:Server("PRIVATE OFFER", "http://www.roblox.com/asset/?id=8932053668")
+local serv2 = win:Server("Other features Gpo")
 local SecretChannel = serv2:Channel("Roll Any Secret")
 
 _G.LoopToolEsp = true
