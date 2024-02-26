@@ -117,7 +117,7 @@ function LoopToolEsp()
     end
 end
 
-function CommonChestEsp()
+function CommonChestEspd()
     while _G.CommonChestEsp == true do
         function Esp()
             local RunService = game:GetService("RunService")
@@ -126,7 +126,7 @@ function CommonChestEsp()
             for i, v in pairs(game:GetService("Workspace").Effects:GetChildren()) do
                 if v:IsA("Model") then
                     local Chest = v:FindFirstChildOfClass("MeshPart")
-                        if Chest and Chest.MeshId == "rbxassetid://10788852296" then
+                        if Chest and Chest.MeshId == "rbxassetid://10779253534" then
                             if not v:FindFirstChild("ESP") then
                                 local BillboardGui = Instance.new("BillboardGui")
                                 local TextLabel = Instance.new("TextLabel")
@@ -146,7 +146,7 @@ function CommonChestEsp()
                                 TextLabel.BorderSizePixel = 0
                                 TextLabel.Size = UDim2.new(1, 0, 1, 1)
                                 TextLabel.Font = Enum.Font.Ubuntu
-                                TextLabel.Text = "[ testing uncommon tool ]"
+                                TextLabel.Text = "[ unknown ]"
                                 TextLabel.TextColor3 = Color3.fromRGB(1, 116, 254)
                                 TextLabel.TextScaled = true
                                 TextLabel.TextSize = 14
@@ -168,6 +168,7 @@ function CommonChestEsp()
         end
         
         Esp()
+    end
 end
 
 MainChannel:Button("Hitbox Expander", function()
