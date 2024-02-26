@@ -7,12 +7,19 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 local win = DiscordLib:Window("ASX GRAM HUB https://discord.gg/FAPCdbW9q6 discord: grammerscripting")
 
 local serv = win:Server("GPO HUB OPENER", "")
+
 local MainChannel = serv:Channel("Main")
+local ChestEspChannel = serv:Channel("Chest ESP")
 local ExtraFeaturesChannel = serv:Channel("Extra")
+
+
 local DeveloperFeaturesChannel = serv:Channel("Developer")
 
 
 _G.LoopToolEsp = true
+
+_G.CommonChestEsp = true
+
 
 
 function LoopToolEsp()
@@ -110,13 +117,62 @@ function LoopToolEsp()
     end
 end
 
-
+function CommonChestEsp()
+    while _G.CommonChestEsp == true do
+        function Esp()
+            local RunService = game:GetService("RunService")
+        
+            RunService.RenderStepped:Connect(function()
+            for i, v in pairs(game:GetService("Workspace").Effects:GetChildren()) do
+                if v:IsA("Model") then
+                    local Chest = v:FindFirstChildOfClass("MeshPart")
+                        if Chest and Chest.MeshId == "rbxassetid://10788852296" then
+                            if not v:FindFirstChild("ESP") then
+                                local BillboardGui = Instance.new("BillboardGui")
+                                local TextLabel = Instance.new("TextLabel")
+                                
+                                BillboardGui.Parent = v
+                                BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                                BillboardGui.Active = true
+                                BillboardGui.AlwaysOnTop = true
+                                BillboardGui.LightInfluence = 1
+                                BillboardGui.MaxDistance = 1500
+                                BillboardGui.Size = UDim2.new(20, 0, 20, 0)
+                                BillboardGui.Name = "ESP"
+                            
+                                TextLabel.Parent = BillboardGui
+                                TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+                                TextLabel.BackgroundTransparency = 1
+                                TextLabel.BorderSizePixel = 0
+                                TextLabel.Size = UDim2.new(1, 0, 1, 1)
+                                TextLabel.Font = Enum.Font.Ubuntu
+                                TextLabel.Text = "[ testing uncommon tool ]"
+                                TextLabel.TextColor3 = Color3.fromRGB(1, 116, 254)
+                                TextLabel.TextScaled = true
+                                TextLabel.TextSize = 14
+                                TextLabel.TextWrapped = true
+                            end
+                        end
+                    end
+                end
+            end)
+        
+            for i, v in pairs(game:GetService("Workspace").Effects:GetChildren()) do
+                if v:IsA("Model") then
+                    local Chest = v:FindFirstChildOfClass("MeshPart")
+                    if Chest and Chest.MeshId == "rbxassetid://10788852296" then
+                        v.ESP.TextLabel.Visible = Value
+                    end
+                end
+            end
+        end
+        
+        Esp()
+end
 
 MainChannel:Button("Hitbox Expander", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
 end)
-
-
 
 MainChannel:Button("Press me to activate Hold down 0 to run fast", function()
     repeat wait() until game.Players.LocalPlayer
@@ -279,5 +335,15 @@ ExtraFeaturesChannel:Toggle(
     function(bool)
         _G.LoopToolEsp = bool
         LoopToolEsp()
+    end
+)
+
+
+ExtraFeaturesChannel:Toggle(
+    "Loop uncommon chest esp",
+    false,
+    function(bool)
+        _G.CommonChestEsp = bool
+        CommonChestEsp()
     end
 )
