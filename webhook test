@@ -265,7 +265,11 @@ ExtraFeaturesChannel:Button("Player Esp", function()
     pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
 end)
 
-DeveloperFeaturesChannel:Button("Player Esp", function()
+DeveloperFeaturesChannel:Button("Remote Spy", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+end)
+
+DeveloperFeaturesChannel:Button("Dark Dex", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
 end)
 
