@@ -8,7 +8,8 @@ local win = DiscordLib:Window("ASX GRAM HUB https://discord.gg/FAPCdbW9q6 discor
 
 local serv = win:Server("GPO HUB OPENER", "")
 local MainChannel = serv:Channel("Main")
-local ExtraFeaturesChannel = serv:Channel("Extra Features")
+local ExtraFeaturesChannel = serv:Channel("Extra")
+local DeveloperFeaturesChannel = serv:Channel("Developer")
 
 
 _G.LoopToolEsp = true
@@ -160,7 +161,7 @@ MainChannel:Button("Remove fog", function()
         end
 end)
 
-MainChannel:Button("Press L to teleport 12 studs up", function()
+MainChannel:Button("Press L to teleport 13 studs up", function()
     -- Locate the player's character
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
@@ -169,7 +170,7 @@ MainChannel:Button("Press L to teleport 12 studs up", function()
     -- Define the function to teleport the character
     local function teleportUp()
     local currentPosition = character:GetPrimaryPartCFrame().Position
-    local newPosition = currentPosition + Vector3.new(0, 12, 0) -- Teleport 10 studs above
+    local newPosition = currentPosition + Vector3.new(0, 13, 0) -- Teleport 10 studs above
 
     -- Teleport the character
     character:SetPrimaryPartCFrame(CFrame.new(newPosition))
@@ -262,6 +263,10 @@ end)
 
 ExtraFeaturesChannel:Button("Player Esp", function()
     pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+end)
+
+DeveloperFeaturesChannel:Button("Player Esp", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
 end)
 
 ExtraFeaturesChannel:Toggle(
