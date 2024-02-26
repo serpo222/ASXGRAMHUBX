@@ -117,7 +117,7 @@ function LoopToolEsp()
     end
 end
 
-function CommonChestEspd()
+function CommonChestEsp()
     while _G.CommonChestEsp == true do
         function Esp()
             local RunService = game:GetService("RunService")
